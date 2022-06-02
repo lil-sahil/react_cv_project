@@ -5,9 +5,21 @@ class GeneralInformation extends Component {
     super(props);
   }
 
+  createFormElements() {
+    // console.log(this.props.currentState);
+    for (let i in this.props.currentState) {
+      console.log(i);
+    }
+  }
+
+  // Create a method to render the label and input using the current state prop.
+
   render() {
+    this.createFormElements();
     return (
       <div>
+        <div>Enter CV Details in the forms below</div>
+
         <form id="general-information">
           <label>Name</label>
           <input
@@ -34,6 +46,22 @@ class GeneralInformation extends Component {
           <input
             type="text"
             id="country"
+            onChange={this.props.checkChange}
+          ></input>
+        </form>
+
+        <form id="educational-experience">
+          <label>Education Level</label>
+          <input
+            type="text"
+            id="educationLevel"
+            onChange={this.props.checkChange}
+          ></input>
+
+          <label>School Name</label>
+          <input
+            type="text"
+            id="schoolName"
             onChange={this.props.checkChange}
           ></input>
         </form>

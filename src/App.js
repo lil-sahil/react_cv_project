@@ -12,6 +12,10 @@ class App extends Component {
       email: "",
       phoneNumber: "",
       country: "",
+      educationLevel: "",
+      schoolName: "",
+      graduationDate: "",
+      degree: "",
     };
 
     this.changeField = this.changeField.bind(this);
@@ -27,7 +31,10 @@ class App extends Component {
   render() {
     return (
       <div className="container-row">
-        <GeneralInformation checkChange={this.changeField}></GeneralInformation>
+        <GeneralInformation
+          checkChange={this.changeField}
+          currentState={this.state}
+        ></GeneralInformation>
         <Preview currentState={this.state}></Preview>
       </div>
     );
