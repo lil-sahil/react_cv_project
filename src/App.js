@@ -26,7 +26,7 @@ class App extends Component {
 
   render() {
     return (
-      <div id="main-container">
+      <div className="container-row">
         <GeneralInformation checkChange={this.changeField}></GeneralInformation>
         <Preview currentState={this.state}></Preview>
       </div>

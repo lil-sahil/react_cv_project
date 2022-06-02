@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PreviewHeader from "./PreviewHeader";
 
 class Preview extends Component {
   constructor(props) {
@@ -7,12 +6,21 @@ class Preview extends Component {
   }
 
   render() {
-    console.log(this.props);
+    let { name, email, phoneNumber, country } = this.props.currentState;
     return (
       <div id="preview-screen">
-        <PreviewHeader data={this.props.currentState}></PreviewHeader>
-        {/* {this.props.currentState.name}
-        {this.props.currentState.email} */}
+        {/* Preview Header */}
+        <div id="preview-header">
+          <div id="main-title">CV Application</div>
+        </div>
+
+        {/* General Information */}
+        <div id="general-information">
+          <div>{name}</div>
+          <div>{email}</div>
+          <div>{phoneNumber}</div>
+          <div>{country}</div>
+        </div>
       </div>
     );
   }
