@@ -8,14 +8,33 @@ class App extends Component {
     super();
 
     this.state = {
-      name: "",
-      email: "",
-      phoneNumber: "",
-      country: "",
-      educationLevel: "",
-      schoolName: "",
-      graduationDate: "",
-      degree: "",
+      generalInformation: {
+        isRadio: {},
+
+        isField: {
+          name: "",
+          email: "",
+          phoneNumber: "",
+          country: "",
+        },
+      },
+      educationInformation: {
+        isRadio: {
+          educationLevel: "",
+          degree: "",
+        },
+        isField: {
+          schoolName: "",
+          graduationDate: "",
+        },
+      },
+      workInformation: {
+        isRadio: {},
+        isField: {
+          jobTitle: "",
+          yearsOfExperience: "",
+        },
+      },
     };
 
     this.changeField = this.changeField.bind(this);

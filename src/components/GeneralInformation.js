@@ -5,21 +5,28 @@ class GeneralInformation extends Component {
     super(props);
   }
 
+  // Try using Map?
   createFormElements() {
     // console.log(this.props.currentState);
-    for (let i in this.props.currentState) {
-      console.log(i);
+    for (let info in this.props.currentState) {
+      // Radio fields
+      for (let typeInfo in this.props.currentState[info]) {
+        if (typeInfo === "isRadio") {
+          for (let radioField in this.props.currentState[info][typeInfo]) {
+            <input type="radio" id={`${radioField}`}></input>;
+          }
+        }
+      }
     }
   }
 
   // Create a method to render the label and input using the current state prop.
 
   render() {
-    this.createFormElements();
     return (
       <div>
         <div>Enter CV Details in the forms below</div>
-
+        {this.createFormElements()}
         <form id="general-information">
           <label>Name</label>
           <input
@@ -52,11 +59,12 @@ class GeneralInformation extends Component {
 
         <form id="educational-experience">
           <label>Education Level</label>
-          <input
-            type="text"
+          {/* <input
+            type="radio"
             id="educationLevel"
             onChange={this.props.checkChange}
-          ></input>
+            value="University"
+          ></input> */}
 
           <label>School Name</label>
           <input
