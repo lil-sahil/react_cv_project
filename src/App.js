@@ -20,13 +20,16 @@ class App extends Component {
       schoolName: "",
       graduationDate: "",
       degree: "",
+      educationEntries: 1,
 
       // Work Information
       jobTitle: "",
       yearsOfExperience: "",
+      workEnteries: 1,
     };
 
     this.changeField = this.changeField.bind(this);
+    this.addItems = this.addItems.bind(this);
   }
 
   // Check for change of fields
@@ -34,6 +37,22 @@ class App extends Component {
     this.setState({
       [e.target.id]: e.target.value,
     });
+  }
+
+  // Add items to state based on button id
+  addItems(e) {
+    if (e.target.id === "educationExperience") {
+      let currentEntry = this.state.educationEntries;
+      this.setState(
+        {
+          [`schoolName-${currentEntry}`]: "",
+          [`graduationDate-${currentEntry}`]: "",
+          [`degree-${currentEntry}`]: "",
+          educationEntries: this.state.educationEntries + 1,
+        },
+        () => console.log(this.state)
+      );
+    }
   }
 
   render() {
@@ -48,13 +67,14 @@ class App extends Component {
           <EducationExperience
             checkChange={this.changeField}
             currentState={this.state}
+            addExperience={this.addItems}
           ></EducationExperience>
-        </div>
 
-        <PracticalExperience
-          checkChange={this.changeField}
-          currentState={this.state}
-        ></PracticalExperience>
+          <PracticalExperience
+            checkChange={this.changeField}
+            currentState={this.state}
+          ></PracticalExperience>
+        </div>
 
         <div id="preview-screen" className="container-col">
           <Preview currentState={this.state}></Preview>

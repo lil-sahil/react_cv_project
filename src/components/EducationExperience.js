@@ -19,6 +19,10 @@ export class EducationExperience extends Component {
             itemNames
           )}
         </form>
+
+        <button id="educationExperience" onClick={this.props.addExperience}>
+          +
+        </button>
       </div>
     );
   }
