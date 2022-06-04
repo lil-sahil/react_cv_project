@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import GeneralInformation from "./components/GeneralInformation";
 import Preview from "./components/Preview";
 import EducationExperience from "./components/EducationExperience";
+import PracticalExperience from "./components/PracticalExperience";
 import "./index.css";
 
 class App extends Component {
@@ -49,6 +50,11 @@ class App extends Component {
             currentState={this.state}
           ></EducationExperience>
         </div>
+
+        <PracticalExperience
+          checkChange={this.changeField}
+          currentState={this.state}
+        ></PracticalExperience>
 
         <div id="preview-screen" className="container-col">
           <Preview currentState={this.state}></Preview>

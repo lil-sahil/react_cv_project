@@ -43,6 +43,12 @@ class Preview extends Component {
           <div>Graduation Date: {graduationDate}</div>
           <div>Degree {degree}</div>
         </div>
+
+        {/* Work Experience */}
+        <div id="preview-work-information">
+          <div>Job Title: {jobTitle}</div>
+          <div>Years of Experience: {yearsOfExperience}</div>
+        </div>
       </div>
     );
   }
