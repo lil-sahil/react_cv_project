@@ -9,13 +9,14 @@ export class EducationExperience extends Component {
   }
 
   render() {
+    let itemNames = ["schoolName", "graduationDate", "degree"];
     return (
       <div id="education-information">
         <form>
           {createFormElements(
             this.props.currentState,
             this.props.checkChange,
-            "educationInformation"
+            itemNames
           )}
         </form>
       </div>

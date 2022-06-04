@@ -6,15 +6,18 @@ class Preview extends Component {
   }
 
   render() {
-    console.log(this.props.currentState.generalInformation.isField);
-    let { name, email, phoneNumber, country } =
-      this.props.currentState.generalInformation.isField;
-    let { schoolName, graduationDate, degree } =
-      this.props.currentState.educationInformation.isField;
-    let { jobTitle, yearsOfExperience } =
-      this.props.currentState.workInformation.isField;
+    let {
+      name,
+      email,
+      phoneNumber,
+      country,
+      schoolName,
+      graduationDate,
+      degree,
+      jobTitle,
+      yearsOfExperience,
+    } = this.props.currentState;
 
-    console.log(name);
     return (
       <div id="preview-container">
         {/* Preview Header */}
@@ -36,9 +39,9 @@ class Preview extends Component {
 
         {/* Educational Experience */}
         <div id="preview-educational-information">
-          <div>Education Level: {schoolName}</div>
-          <div>School Name {graduationDate}</div>
-          <div>School Name {degree}</div>
+          <div>School Name: {schoolName}</div>
+          <div>Graduation Date: {graduationDate}</div>
+          <div>Degree {degree}</div>
         </div>
       </div>
     );

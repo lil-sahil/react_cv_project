@@ -9,13 +9,14 @@ class GeneralInformation extends Component {
   }
 
   render() {
+    let itemNames = ["name", "email", "phoneNumber", "country"];
     return (
       <div id="general-information">
         <form>
           {createFormElements(
             this.props.currentState,
             this.props.checkChange,
-            "generalInformation"
+            itemNames
           )}
         </form>
       </div>
