@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import GeneralInformation from "./components/GeneralInformation";
 import Preview from "./components/Preview";
+import EducationExperience from "./components/EducationExperience";
 import "./index.css";
 
 class App extends Component {
@@ -9,8 +10,6 @@ class App extends Component {
 
     this.state = {
       generalInformation: {
-        isRadio: {},
-
         isField: {
           name: "",
           email: "",
@@ -19,17 +18,13 @@ class App extends Component {
         },
       },
       educationInformation: {
-        isRadio: {
-          educationLevel: "",
-          degree: "",
-        },
         isField: {
           schoolName: "",
           graduationDate: "",
+          degree: "",
         },
       },
       workInformation: {
-        isRadio: {},
         isField: {
           jobTitle: "",
           yearsOfExperience: "",
@@ -50,11 +45,21 @@ class App extends Component {
   render() {
     return (
       <div className="container-row">
-        <GeneralInformation
-          checkChange={this.changeField}
-          currentState={this.state}
-        ></GeneralInformation>
-        <Preview currentState={this.state}></Preview>
+        <div id="information-enter-screen">
+          <GeneralInformation
+            checkChange={this.changeField}
+            currentState={this.state}
+          ></GeneralInformation>
+
+          <EducationExperience
+            checkChange={this.changeField}
+            currentState={this.state}
+          ></EducationExperience>
+        </div>
+
+        <div id="preview-screen" className="container-col">
+          <Preview currentState={this.state}></Preview>
+        </div>
       </div>
     );
   }
