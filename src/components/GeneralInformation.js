@@ -11,13 +11,11 @@ class GeneralInformation extends Component {
   render() {
     return (
       <div id="general-information">
-        <form>
-          {createFormElements(
-            this.props.currentState,
-            this.props.checkChange,
-            "generalInformation"
-          )}
-        </form>
+        {createFormElements(
+          this.props.currentState,
+          this.props.checkChange,
+          "generalInformation"
+        )}
       </div>
     );
   }

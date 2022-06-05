@@ -6,18 +6,6 @@ class Preview extends Component {
   }
 
   render() {
-    let {
-      name,
-      email,
-      phoneNumber,
-      country,
-      schoolName,
-      graduationDate,
-      degree,
-      jobTitle,
-      yearsOfExperience,
-    } = this.props.currentState;
-
     return (
       <div id="preview-container">
         {/* Preview Header */}
@@ -28,10 +16,12 @@ class Preview extends Component {
         {/* General Information */}
         <div id="preview-general-information">
           <div id="Written Information">
-            <div>Name: {name}</div>
-            <div>Email {email}</div>
-            <div>Phone Number {phoneNumber}</div>
-            <div>Country {country}</div>
+            <div>
+              Name: {this.props.currentState.generalInformation[0].name}
+            </div>
+            <div>Email </div>
+            <div>Phone Number </div>
+            <div>Country </div>
           </div>
 
           <div id="image"></div>
@@ -39,15 +29,15 @@ class Preview extends Component {
 
         {/* Educational Experience */}
         <div id="preview-educational-information">
-          <div>School Name: {schoolName}</div>
-          <div>Graduation Date: {graduationDate}</div>
-          <div>Degree {degree}</div>
+          <div>School Name: </div>
+          <div>Graduation Date: </div>
+          <div>Degree </div>
         </div>
 
         {/* Work Experience */}
         <div id="preview-work-information">
-          <div>Job Title: {jobTitle}</div>
-          <div>Years of Experience: {yearsOfExperience}</div>
+          <div>Job Title: </div>
+          <div>Years of Experience: </div>
         </div>
       </div>
     );

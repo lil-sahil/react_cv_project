@@ -3,36 +3,31 @@ import { convertCamelToRegular } from "./camelCasetoRegular";
 export let createFormElements = (
   currentState,
   changeMethod,
-  informationBucket
+  informationType
 ) => {
-  let finalArr = [];
-  console.log(informationBucket);
+  return currentState[informationType].map(x => {
+    let arr = []
+    let element
+    for (let y in x){
+      element = (
+        <div className={informationType}>
+          <label>{y}</label>
+          <input
+            type="input"
+            className = {y}
+            onChange={changeMethod}
+          ></input>
+        </div>
+      )
 
-  for (let bucket in currentState) {
-    if (bucket === informationBucket) {
-      for (let enteries in currentState[bucket]) {
-        if (!enteries.includes("numberOfEnteries")) {
-          let bucketArray = [];
-          for (let individualEnteries in currentState[bucket][enteries]) {
-            let convertedName = convertCamelToRegular(individualEnteries);
-            let element = (
-              <div>
-                <label>{convertedName}</label>
-                <input
-                  type="input"
-                  id={individualEnteries}
-                  onChange={changeMethod}
-                ></input>
-              </div>
-            );
-
-            bucketArray.push(element);
-          }
-          finalArr.push(bucketArray);
-        }
-      }
+      arr.push(element)
     }
-  }
 
-  return finalArr;
+    return (
+      <div className = {x.id}>
+        {arr}
+      </div>    
+    )
+  })
+
 };
