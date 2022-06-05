@@ -11,25 +11,30 @@ class App extends Component {
 
     this.state = {
       // General Information
-      name: "",
-      email: "",
-      phoneNumber: "",
-      country: "",
+      generalInformation: {
+        numberOfEnteries: 1,
+        entry: {
+          name: "",
+          email: "",
+          phoneNumber: "",
+          country: "",
+        },
+      },
 
       // Education Information
-      schoolName: "",
-      graduationDate: "",
-      degree: "",
-      educationEntries: 1,
+      // schoolName: "",
+      // graduationDate: "",
+      // degree: "",
+      // educationEntries: 1,
 
       // Work Information
-      jobTitle: "",
-      yearsOfExperience: "",
-      workEnteries: 1,
+      // jobTitle: "",
+      // yearsOfExperience: "",
+      // workEnteries: 1,
     };
 
     this.changeField = this.changeField.bind(this);
-    this.addItems = this.addItems.bind(this);
+    // this.addItems = this.addItems.bind(this);
   }
 
   // Check for change of fields
@@ -40,20 +45,20 @@ class App extends Component {
   }
 
   // Add items to state based on button id
-  addItems(e) {
-    if (e.target.id === "educationExperience") {
-      let currentEntry = this.state.educationEntries;
-      this.setState(
-        {
-          [`schoolName-${currentEntry}`]: "",
-          [`graduationDate-${currentEntry}`]: "",
-          [`degree-${currentEntry}`]: "",
-          educationEntries: this.state.educationEntries + 1,
-        },
-        () => console.log(this.state)
-      );
-    }
-  }
+  // addItems(e) {
+  //   if (e.target.id === "educationExperience") {
+  //     let currentEntry = this.state.educationEntries;
+  //     this.setState(
+  //       {
+  //         [`schoolName${currentEntry}`]: "",
+  //         [`graduationDate${currentEntry}`]: "",
+  //         [`degree${currentEntry}`]: "",
+  //         educationEntries: this.state.educationEntries + 1,
+  //       },
+  //       () => console.log(this.state)
+  //     );
+  //   }
+  // }
 
   render() {
     return (
@@ -64,7 +69,7 @@ class App extends Component {
             currentState={this.state}
           ></GeneralInformation>
 
-          <EducationExperience
+          {/* <EducationExperience
             checkChange={this.changeField}
             currentState={this.state}
             addExperience={this.addItems}
@@ -73,7 +78,7 @@ class App extends Component {
           <PracticalExperience
             checkChange={this.changeField}
             currentState={this.state}
-          ></PracticalExperience>
+          ></PracticalExperience> */}
         </div>
 
         <div id="preview-screen" className="container-col">
