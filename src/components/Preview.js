@@ -18,14 +18,7 @@ class Preview extends Component {
 
         {/* General Information */}
         <div id="preview-general-information">
-          <div id="Written Information">
-            <div>
-              Name: {this.props.currentState.generalInformation[0].name}
-            </div>
-            <div>Email </div>
-            <div>Phone Number </div>
-            <div>Country </div>
-          </div>
+          {createPreviewElements(this.props.currentState, "generalInformation")}
 
           <div id="image"></div>
         </div>
