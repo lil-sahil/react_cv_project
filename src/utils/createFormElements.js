@@ -12,7 +12,7 @@ export let createFormElements = (
       if (y !== 'id'){
         element = (
           <div className={informationType}>
-            <label>{y}</label>
+            <label>{convertCamelToRegular(y)}</label>
             <input
               type="input"
               className = {y}

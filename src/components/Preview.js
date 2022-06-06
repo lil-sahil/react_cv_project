@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+// Utils
+import { createPreviewElements } from "../utils/createPreviewElements";
+
 class Preview extends Component {
   constructor(props) {
     super(props);
@@ -29,16 +32,14 @@ class Preview extends Component {
 
         {/* Educational Experience */}
         <div id="preview-educational-information">
-          <div>School Name: </div>
-          <div>Graduation Date: </div>
-          <div>Degree </div>
+          {createPreviewElements(
+            this.props.currentState,
+            "educationInformation"
+          )}
         </div>
 
         {/* Work Experience */}
-        <div id="preview-work-information">
-          <div>Job Title: </div>
-          <div>Years of Experience: </div>
-        </div>
+        <div id="preview-work-information"></div>
       </div>
     );
   }
