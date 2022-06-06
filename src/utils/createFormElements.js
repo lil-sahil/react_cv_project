@@ -9,18 +9,20 @@ export let createFormElements = (
     let arr = []
     let element
     for (let y in x){
-      element = (
-        <div className={informationType}>
-          <label>{y}</label>
-          <input
-            type="input"
-            className = {y}
-            onChange={changeMethod}
-          ></input>
-        </div>
-      )
+      if (y !== 'id'){
+        element = (
+          <div className={informationType}>
+            <label>{y}</label>
+            <input
+              type="input"
+              className = {y}
+              onChange={changeMethod}
+            ></input>
+          </div>
+        )
+        arr.push(element)
+      }
 
-      arr.push(element)
     }
 
     return (
