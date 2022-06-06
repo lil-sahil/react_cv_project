@@ -20,21 +20,18 @@ class App extends Component {
           country: "",
           id: 1,
         },
+      ],
 
+      educationInformation: [
         {
-          name: "",
-          email: "",
-          phoneNumber: "",
-          country: "",
-          id: 2,
+          schoolName: "",
+          graduationDate: "",
+          degree: "",
+          id: 1,
         },
       ],
 
       // Education Information
-      // schoolName: "",
-      // graduationDate: "",
-      // degree: "",
-      // educationEntries: 1,
 
       // Work Information
       // jobTitle: "",
@@ -43,7 +40,7 @@ class App extends Component {
     };
 
     this.changeField = this.changeField.bind(this);
-    // this.addItems = this.addItems.bind(this);
+    this.addItems = this.addItems.bind(this);
   }
 
   // Check for change of fields
@@ -64,20 +61,28 @@ class App extends Component {
   }
 
   // Add items to state based on button id
-  // addItems(e) {
-  //   if (e.target.id === "educationExperience") {
-  //     let currentEntry = this.state.educationEntries;
-  //     this.setState(
-  //       {
-  //         [`schoolName${currentEntry}`]: "",
-  //         [`graduationDate${currentEntry}`]: "",
-  //         [`degree${currentEntry}`]: "",
-  //         educationEntries: this.state.educationEntries + 1,
-  //       },
-  //       () => console.log(this.state)
-  //     );
-  //   }
-  // }
+  addItems(e) {
+    // Education Experince
+    if (e.target.id === "educationExperience") {
+      this.setState((prevState) => {
+        let items = prevState["educationInformation"];
+        items.push({
+          schoolName: "",
+          graduationDate: "",
+          degree: "",
+        });
+
+        let idNumber = 1;
+        items = items.map((item) => {
+          item.id = idNumber;
+          idNumber++;
+
+          return item;
+        });
+        return items;
+      });
+    }
+  }
 
   render() {
     return (
@@ -88,13 +93,13 @@ class App extends Component {
             currentState={this.state}
           ></GeneralInformation>
 
-          {/* <EducationExperience
+          <EducationExperience
             checkChange={this.changeField}
             currentState={this.state}
             addExperience={this.addItems}
           ></EducationExperience>
 
-          <PracticalExperience
+          {/* <PracticalExperience
             checkChange={this.changeField}
             currentState={this.state}
           ></PracticalExperience> */}
