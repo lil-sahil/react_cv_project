@@ -9,16 +9,13 @@ export class PracticalExperience extends Component {
   }
 
   render() {
-    let itemNames = ["jobTitle", "yearsOfExperience"];
     return (
-      <div id="work-information">
-        <form>
-          {createFormElements(
-            this.props.currentState,
-            this.props.checkChange,
-            itemNames
-          )}
-        </form>
+      <div id="work-Information">
+        {createFormElements(
+          this.props.currentState,
+          this.props.checkChange,
+          "workInformation"
+        )}
       </div>
     );
   }

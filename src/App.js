@@ -31,12 +31,13 @@ class App extends Component {
         },
       ],
 
-      // Education Information
-
-      // Work Information
-      // jobTitle: "",
-      // yearsOfExperience: "",
-      // workEnteries: 1,
+      workInformation: [
+        {
+          jobTitle: "",
+          yearsOfExperience: "",
+          id: 1,
+        },
+      ],
     };
 
     this.changeField = this.changeField.bind(this);
@@ -99,10 +100,10 @@ class App extends Component {
             addExperience={this.addItems}
           ></EducationExperience>
 
-          {/* <PracticalExperience
+          <PracticalExperience
             checkChange={this.changeField}
             currentState={this.state}
-          ></PracticalExperience> */}
+          ></PracticalExperience>
         </div>
 
         <div id="preview-screen" className="container-col">

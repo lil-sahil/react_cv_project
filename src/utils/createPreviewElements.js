@@ -6,7 +6,6 @@ export let createPreviewElements = (currentState, informationType) => {
     let element;
     for (let y in x) {
       if (y !== "id") {
-        console.log(y);
         let value = x[y];
         element = <div>{`${convertCamelToRegular(y)}: ${value}`}</div>;
         arr.push(element);

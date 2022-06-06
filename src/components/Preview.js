@@ -39,7 +39,9 @@ class Preview extends Component {
         </div>
 
         {/* Work Experience */}
-        <div id="preview-work-information"></div>
+        <div id="preview-work-information">
+          {createPreviewElements(this.props.currentState, "workInformation")}
+        </div>
       </div>
     );
   }
