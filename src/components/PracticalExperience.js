@@ -10,7 +10,7 @@ export class PracticalExperience extends Component {
 
   render() {
     return (
-      <div id="work-Information">
+      <div id="work-information">
         {createFormElements(
           this.props.currentState,
           this.props.checkChange,

@@ -42,6 +42,7 @@ class App extends Component {
 
     this.changeField = this.changeField.bind(this);
     this.addItems = this.addItems.bind(this);
+    this.deleteItems = this.deleteItems.bind(this);
   }
 
   // Check for change of fields
@@ -85,6 +86,28 @@ class App extends Component {
     }
   }
 
+  // Delete items based on id
+  deleteItems(e) {
+    let itemId = parseInt(e.target.parentNode.className);
+    let informationBucket = e.target.nextSibling.className;
+    console.log(this.state[informationBucket]);
+    this.setState({
+      [informationBucket]: this.state[informationBucket].filter(
+        (x) => x.id !== itemId
+      ),
+    });
+
+    // this.setState(
+    //   (prevState) => {
+    //     let items = prevState[informationBucket];
+
+    //     items = items.filter((x) => x.id !== itemId);
+    //     console.log(prevState);
+    //   },
+    //   () => console.log(this.state)
+    // );
+  }
+
   render() {
     return (
       <div className="container-row">
@@ -98,11 +121,13 @@ class App extends Component {
             checkChange={this.changeField}
             currentState={this.state}
             addExperience={this.addItems}
+            deleteItems={this.deleteItems}
           ></EducationExperience>
 
           <PracticalExperience
             checkChange={this.changeField}
             currentState={this.state}
+            deleteItems={this.deleteItems}
           ></PracticalExperience>
         </div>
 

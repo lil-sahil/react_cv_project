@@ -14,7 +14,8 @@ export class EducationExperience extends Component {
         {createFormElements(
           this.props.currentState,
           this.props.checkChange,
-          "educationInformation"
+          "educationInformation",
+          this.props.deleteItems
         )}
 
         <button id="educationExperience" onClick={this.props.addExperience}>

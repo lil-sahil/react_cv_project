@@ -3,8 +3,11 @@ import { convertCamelToRegular } from "./camelCasetoRegular";
 export let createFormElements = (
   currentState,
   changeMethod,
-  informationType
+  informationType,
+  deleteEvent
 ) => {
+
+  let addDeleteButton = ['educationInformation', 'workInformation']
   return currentState[informationType].map(x => {
     let arr = []
     let element
@@ -27,7 +30,9 @@ export let createFormElements = (
 
     return (
       <div className = {x.id}>
+        {addDeleteButton.includes(informationType) ? <button onClick={deleteEvent}>Delete</button> : false}
         {arr}
+
       </div>    
     )
   })
