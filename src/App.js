@@ -4,7 +4,6 @@ import Preview from "./components/Preview";
 import EducationExperience from "./components/EducationExperience";
 import PracticalExperience from "./components/PracticalExperience";
 import "./index.css";
-import { toHaveAccessibleName } from "@testing-library/jest-dom/dist/matchers";
 
 class App extends Component {
   constructor() {
