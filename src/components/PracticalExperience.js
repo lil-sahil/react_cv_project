@@ -14,8 +14,13 @@ export class PracticalExperience extends Component {
         {createFormElements(
           this.props.currentState,
           this.props.checkChange,
-          "workInformation"
+          "workInformation",
+          this.props.deleteItems
         )}
+
+        <button id="workExperience" onClick={this.props.addExperience}>
+          +
+        </button>
       </div>
     );
   }

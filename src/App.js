@@ -64,33 +64,96 @@ class App extends Component {
 
   // Add items to state based on button id
   addItems(e) {
-    // Education Experince
-    if (e.target.id === "educationExperience") {
-      this.setState((prevState) => {
-        let items = prevState["educationInformation"];
-        items.push({
-          schoolName: "",
-          graduationDate: "",
-          degree: "",
-        });
+    // Determine which type of objec to add to state
+    let bucket = e.target.id;
+    console.log(bucket);
+    let objectToAdd = {};
+    if (bucket === "educationExperience") {
+      objectToAdd = {
+        schoolName: "",
+        graduationDate: "",
+        degree: "",
+      };
+      bucket = "educationInformation";
+    } else if (bucket === "workExperience") {
+      objectToAdd = {
+        jobTitle: "",
+        yearsOfExperience: "",
+      };
 
-        let idNumber = 1;
-        items = items.map((item) => {
-          item.id = idNumber;
-          idNumber++;
-
-          return item;
-        });
-        return items;
-      });
+      bucket = "workInformation";
     }
+
+    // Set the state with the object
+    this.setState(
+      {
+        [bucket]: this.state[bucket].concat(objectToAdd),
+      },
+      () => {
+        let idNumber = 1;
+        this.setState({
+          [bucket]: this.state[bucket].map((item) => {
+            item.id = idNumber;
+            idNumber++;
+            return item;
+          }),
+        });
+      }
+    );
+
+    // Education Experience
+    // if (e.target.id === "educationExperience") {
+    //   this.setState(
+    //     {
+    //       educationInformation: this.state.educationInformation.concat({
+    //         schoolName: "",
+    //         graduationDate: "",
+    //         degree: "",
+    //       }),
+    //     },
+    //     () => {
+    //       let idNumber = 1;
+    //       this.setState({
+    //         educationInformation: this.state.educationInformation.map(
+    //           (item) => {
+    //             item.id = idNumber;
+    //             idNumber++;
+    //             return item;
+    //           }
+    //         ),
+    //       });
+    //     }
+    //   );
+    // }
+
+    // Work Information
+    // if (e.target.id === "workExperience") {
+    //   this.setState(
+    //     {
+    //       workInformation: this.state.workInformation.concat({
+    //         jobTitle: "",
+    //         yearsOfExperience: "",
+    //       }),
+    //     },
+    //     () => {
+    //       let idNumber = 1;
+    //       this.setState({
+    //         workInformation: this.state.workInformation.map((item) => {
+    //           item.id = idNumber;
+    //           idNumber++;
+    //           return item;
+    //         }),
+    //       });
+    //     }
+    //   );
+    // }
   }
 
   // Delete items based on id
   deleteItems(e) {
     let itemId = parseInt(e.target.parentNode.className);
     let informationBucket = e.target.nextSibling.className;
-    console.log(this.state[informationBucket]);
+
     this.setState({
       [informationBucket]: this.state[informationBucket].filter(
         (x) => x.id !== itemId
@@ -127,6 +190,7 @@ class App extends Component {
           <PracticalExperience
             checkChange={this.changeField}
             currentState={this.state}
+            addExperience={this.addItems}
             deleteItems={this.deleteItems}
           ></PracticalExperience>
         </div>

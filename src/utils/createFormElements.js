@@ -30,6 +30,7 @@ export let createFormElements = (
 
     return (
       <div className = {x.id}>
+        {/* Make sure the delete button is added on top of the divs to prevent nextsibling from breaking */}
         {addDeleteButton.includes(informationType) ? <button onClick={deleteEvent}>Delete</button> : false}
         {arr}
 
