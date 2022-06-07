@@ -66,7 +66,6 @@ class App extends Component {
   addItems(e) {
     // Determine which type of objec to add to state
     let bucket = e.target.id;
-    console.log(bucket);
     let objectToAdd = {};
     if (bucket === "educationExperience") {
       objectToAdd = {
@@ -100,53 +99,6 @@ class App extends Component {
         });
       }
     );
-
-    // Education Experience
-    // if (e.target.id === "educationExperience") {
-    //   this.setState(
-    //     {
-    //       educationInformation: this.state.educationInformation.concat({
-    //         schoolName: "",
-    //         graduationDate: "",
-    //         degree: "",
-    //       }),
-    //     },
-    //     () => {
-    //       let idNumber = 1;
-    //       this.setState({
-    //         educationInformation: this.state.educationInformation.map(
-    //           (item) => {
-    //             item.id = idNumber;
-    //             idNumber++;
-    //             return item;
-    //           }
-    //         ),
-    //       });
-    //     }
-    //   );
-    // }
-
-    // Work Information
-    // if (e.target.id === "workExperience") {
-    //   this.setState(
-    //     {
-    //       workInformation: this.state.workInformation.concat({
-    //         jobTitle: "",
-    //         yearsOfExperience: "",
-    //       }),
-    //     },
-    //     () => {
-    //       let idNumber = 1;
-    //       this.setState({
-    //         workInformation: this.state.workInformation.map((item) => {
-    //           item.id = idNumber;
-    //           idNumber++;
-    //           return item;
-    //         }),
-    //       });
-    //     }
-    //   );
-    // }
   }
 
   // Delete items based on id
@@ -159,16 +111,6 @@ class App extends Component {
         (x) => x.id !== itemId
       ),
     });
-
-    // this.setState(
-    //   (prevState) => {
-    //     let items = prevState[informationBucket];
-
-    //     items = items.filter((x) => x.id !== itemId);
-    //     console.log(prevState);
-    //   },
-    //   () => console.log(this.state)
-    // );
   }
 
   render() {
