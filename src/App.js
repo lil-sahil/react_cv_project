@@ -4,6 +4,7 @@ import Preview from "./components/Preview";
 import EducationExperience from "./components/EducationExperience";
 import PracticalExperience from "./components/PracticalExperience";
 import "./index.css";
+import ClearButton from "./components/ClearButton";
 
 class App extends Component {
   constructor() {
@@ -42,6 +43,7 @@ class App extends Component {
     this.changeField = this.changeField.bind(this);
     this.addItems = this.addItems.bind(this);
     this.deleteItems = this.deleteItems.bind(this);
+    this.clear = this.clear.bind(this);
   }
 
   // Check for change of fields
@@ -112,14 +114,50 @@ class App extends Component {
     });
   }
 
+  // Delete all items and reset fields.
+  clear() {
+    this.setState({
+      // General Information
+      generalInformation: [
+        {
+          name: "",
+          email: "",
+          phoneNumber: "",
+          country: "",
+          id: 1,
+        },
+      ],
+
+      educationInformation: [
+        {
+          schoolName: "",
+          graduationDate: "",
+          degree: "",
+          id: 1,
+        },
+      ],
+
+      workInformation: [
+        {
+          jobTitle: "",
+          yearsOfExperience: "",
+          id: 1,
+        },
+      ],
+    });
+  }
+
   render() {
     return (
       <div className="container-row">
         <div id="information-enter-screen">
+          <h1>Enter Your Information</h1>
           <GeneralInformation
             checkChange={this.changeField}
             currentState={this.state}
           ></GeneralInformation>
+
+          <h1>Enter Your Educational Experience</h1>
 
           <EducationExperience
             checkChange={this.changeField}
@@ -128,6 +166,8 @@ class App extends Component {
             deleteItems={this.deleteItems}
           ></EducationExperience>
 
+          <h1>Enter Your Work Experience</h1>
+
           <PracticalExperience
             checkChange={this.changeField}
             currentState={this.state}
@@ -135,6 +175,8 @@ class App extends Component {
             deleteItems={this.deleteItems}
           ></PracticalExperience>
         </div>
+
+        <ClearButton clear={this.clear}></ClearButton>
 
         <div id="preview-screen" className="container-col">
           <Preview currentState={this.state}></Preview>
