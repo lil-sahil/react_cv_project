@@ -16,7 +16,8 @@ export class PracticalExperience extends Component {
           this.props.checkChange,
           "workInformation",
           this.props.deleteItems,
-          this.props.addDescription
+          this.props.addDescription,
+          this.props.deleteDescription
         )}
 
         <button id="workExperience" onClick={this.props.addExperience}>

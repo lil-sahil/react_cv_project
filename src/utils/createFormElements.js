@@ -5,7 +5,8 @@ export let createFormElements = (
   changeMethod,
   informationType,
   deleteEvent,
-  addDescription
+  addDescription,
+  deleteDescription,
 ) => {
 
   let addDeleteButton = ['educationInformation', 'workInformation']
@@ -23,6 +24,8 @@ export let createFormElements = (
               className = {y}
               onChange={changeMethod}
             ></input>
+
+            {y.includes('description') ? <button onClick = {deleteDescription} className = {y}>-</button> : false}
           </div>
         )
         arr.push(element)

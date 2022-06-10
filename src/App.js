@@ -41,7 +41,7 @@ class App extends Component {
           jobTitle: "",
           workDates: "",
           companyName: "",
-          description: "",
+          description_1: "",
           id: 1,
         },
       ],
@@ -52,6 +52,7 @@ class App extends Component {
     this.deleteItems = this.deleteItems.bind(this);
     this.clear = this.clear.bind(this);
     this.addDescription = this.addDescription.bind(this);
+    this.deleteDescription = this.deleteDescription.bind(this);
   }
 
   // Check for change of fields
@@ -93,7 +94,7 @@ class App extends Component {
         jobTitle: "",
         workDates: "",
         companyName: "",
-        description: "",
+        description_1: "",
         id: 1,
       };
       bucket = "workInformation";
@@ -162,7 +163,7 @@ class App extends Component {
           jobTitle: "",
           workDates: "",
           companyName: "",
-          description: "",
+          description_1: "",
           id: 1,
         },
       ],
@@ -173,27 +174,41 @@ class App extends Component {
   addDescription(e) {
     let itemId = parseInt(e.target.parentNode.className);
 
-    this.setState(
-      {
-        workInformation: this.state.workInformation.map((x) => {
-          if (x.id === itemId) {
-            // Count the number of descriptions already present
-            let keys = Object.keys(x);
-            let descriptionCount = 0;
+    this.setState({
+      workInformation: this.state.workInformation.map((x) => {
+        if (x.id === itemId) {
+          // Count the number of descriptions already present
+          let keys = Object.keys(x);
+          let descriptionCount = 1;
 
-            keys.forEach((k) => {
-              if (k.includes("description")) {
-                descriptionCount += 1;
-              }
-            });
-            // add another description
-            x[`description_${descriptionCount}`] = "";
-          }
-          return x;
-        }),
-      },
-      () => console.log(this.baseState)
-    );
+          keys.forEach((k) => {
+            if (k.includes("description_")) {
+              descriptionCount += 1;
+            }
+          });
+          // add another description
+          x[`description_${descriptionCount}`] = "";
+        }
+        return x;
+      }),
+    });
+  }
+
+  // Delete description
+  deleteDescription(e) {
+    let itemId = parseInt(e.target.parentNode.parentNode.className);
+    let descriptionId = e.target.className;
+
+    this.setState({
+      workInformation: this.state.workInformation.map((x) => {
+        if (x.id === itemId) {
+          x = Object.fromEntries(
+            Object.entries(x).filter(([key]) => key !== descriptionId)
+          );
+        }
+        return x;
+      }),
+    });
   }
 
   render() {
@@ -223,6 +238,7 @@ class App extends Component {
             addExperience={this.addItems}
             deleteItems={this.deleteItems}
             addDescription={this.addDescription}
+            deleteDescription={this.deleteDescription}
           ></PracticalExperience>
         </div>
 
