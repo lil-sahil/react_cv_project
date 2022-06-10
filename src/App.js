@@ -10,7 +10,7 @@ class App extends Component {
   constructor() {
     super();
 
-    this.baseState = {
+    this.state = {
       // General Information
       generalInformation: [
         {
@@ -47,9 +47,6 @@ class App extends Component {
       ],
     };
 
-    // Deep copy the basestate
-    this.state = JSON.parse(JSON.stringify(this.baseState));
-
     this.changeField = this.changeField.bind(this);
     this.addItems = this.addItems.bind(this);
     this.deleteItems = this.deleteItems.bind(this);
@@ -80,10 +77,25 @@ class App extends Component {
     let bucket = e.target.id;
     let objectToAdd = {};
     if (bucket === "educationExperience") {
-      objectToAdd = this.baseState.educationInformation[0];
+      objectToAdd = {
+        degree: "",
+        degreeDescription: "",
+        schoolName: "",
+        attendDates: "",
+        city: "",
+        stateProvince: "",
+        country: "",
+        id: 1,
+      };
       bucket = "educationInformation";
     } else if (bucket === "workExperience") {
-      objectToAdd = this.baseState.workInformation[0];
+      objectToAdd = {
+        jobTitle: "",
+        workDates: "",
+        companyName: "",
+        description: "",
+        id: 1,
+      };
       bucket = "workInformation";
     }
 
@@ -119,7 +131,42 @@ class App extends Component {
 
   // Delete all items and reset fields.
   clear() {
-    this.setState(this.baseState);
+    this.setState({
+      // General Information
+      generalInformation: [
+        {
+          name: "",
+          email: "",
+          phoneNumber: "",
+          country: "",
+          proffessionalDesignation: "",
+          id: 1,
+        },
+      ],
+
+      educationInformation: [
+        {
+          degree: "",
+          degreeDescription: "",
+          schoolName: "",
+          attendDates: "",
+          city: "",
+          stateProvince: "",
+          country: "",
+          id: 1,
+        },
+      ],
+
+      workInformation: [
+        {
+          jobTitle: "",
+          workDates: "",
+          companyName: "",
+          description: "",
+          id: 1,
+        },
+      ],
+    });
   }
 
   // Add button for description
