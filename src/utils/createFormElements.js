@@ -4,10 +4,12 @@ export let createFormElements = (
   currentState,
   changeMethod,
   informationType,
-  deleteEvent
+  deleteEvent,
+  addDescription
 ) => {
 
   let addDeleteButton = ['educationInformation', 'workInformation']
+  let descriptionAddButton = ['workInformation']
   return currentState[informationType].map(x => {
     let arr = []
     let element
@@ -33,6 +35,7 @@ export let createFormElements = (
         {/* Make sure the delete button is added on top of the divs to prevent nextsibling from breaking */}
         {addDeleteButton.includes(informationType) ? <button onClick={deleteEvent}>Delete</button> : false}
         {arr}
+        {descriptionAddButton.includes(informationType) ? <button onClick={addDescription}>Add Description</button> : false}
 
       </div>    
     )

@@ -10,7 +10,7 @@ class App extends Component {
   constructor() {
     super();
 
-    this.state = {
+    this.baseState = {
       // General Information
       generalInformation: [
         {
@@ -18,15 +18,20 @@ class App extends Component {
           email: "",
           phoneNumber: "",
           country: "",
+          proffessionalDesignation: "",
           id: 1,
         },
       ],
 
       educationInformation: [
         {
-          schoolName: "",
-          graduationDate: "",
           degree: "",
+          degreeDescription: "",
+          schoolName: "",
+          attendDates: "",
+          city: "",
+          stateProvince: "",
+          country: "",
           id: 1,
         },
       ],
@@ -34,16 +39,22 @@ class App extends Component {
       workInformation: [
         {
           jobTitle: "",
-          yearsOfExperience: "",
+          workDates: "",
+          companyName: "",
+          description: "",
           id: 1,
         },
       ],
     };
 
+    // Deep copy the basestate
+    this.state = JSON.parse(JSON.stringify(this.baseState));
+
     this.changeField = this.changeField.bind(this);
     this.addItems = this.addItems.bind(this);
     this.deleteItems = this.deleteItems.bind(this);
     this.clear = this.clear.bind(this);
+    this.addDescription = this.addDescription.bind(this);
   }
 
   // Check for change of fields
@@ -69,18 +80,10 @@ class App extends Component {
     let bucket = e.target.id;
     let objectToAdd = {};
     if (bucket === "educationExperience") {
-      objectToAdd = {
-        schoolName: "",
-        graduationDate: "",
-        degree: "",
-      };
+      objectToAdd = this.baseState.educationInformation[0];
       bucket = "educationInformation";
     } else if (bucket === "workExperience") {
-      objectToAdd = {
-        jobTitle: "",
-        yearsOfExperience: "",
-      };
-
+      objectToAdd = this.baseState.workInformation[0];
       bucket = "workInformation";
     }
 
@@ -116,35 +119,34 @@ class App extends Component {
 
   // Delete all items and reset fields.
   clear() {
-    this.setState({
-      // General Information
-      generalInformation: [
-        {
-          name: "",
-          email: "",
-          phoneNumber: "",
-          country: "",
-          id: 1,
-        },
-      ],
+    this.setState(this.baseState);
+  }
 
-      educationInformation: [
-        {
-          schoolName: "",
-          graduationDate: "",
-          degree: "",
-          id: 1,
-        },
-      ],
+  // Add button for description
+  addDescription(e) {
+    let itemId = parseInt(e.target.parentNode.className);
 
-      workInformation: [
-        {
-          jobTitle: "",
-          yearsOfExperience: "",
-          id: 1,
-        },
-      ],
-    });
+    this.setState(
+      {
+        workInformation: this.state.workInformation.map((x) => {
+          if (x.id === itemId) {
+            // Count the number of descriptions already present
+            let keys = Object.keys(x);
+            let descriptionCount = 0;
+
+            keys.forEach((k) => {
+              if (k.includes("description")) {
+                descriptionCount += 1;
+              }
+            });
+            // add another description
+            x[`description_${descriptionCount}`] = "";
+          }
+          return x;
+        }),
+      },
+      () => console.log(this.baseState)
+    );
   }
 
   render() {
@@ -173,6 +175,7 @@ class App extends Component {
             currentState={this.state}
             addExperience={this.addItems}
             deleteItems={this.deleteItems}
+            addDescription={this.addDescription}
           ></PracticalExperience>
         </div>
 
