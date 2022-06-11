@@ -10,17 +10,20 @@ export class PracticalExperience extends Component {
 
   render() {
     return (
-      <div id="work-information">
+      <div className={this.props.bucket}>
         {createFormElements(
           this.props.currentState,
           this.props.checkChange,
-          "workInformation",
+          this.props.bucket,
           this.props.deleteItems,
           this.props.addDescription,
           this.props.deleteDescription
         )}
 
-        <button id="workExperience" onClick={this.props.addExperience}>
+        <button
+          className={this.props.bucket}
+          onClick={this.props.addExperience}
+        >
           +
         </button>
       </div>

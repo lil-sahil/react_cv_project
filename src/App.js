@@ -51,6 +51,16 @@ class App extends Component {
           id: 1,
         },
       ],
+
+      projectInformation: [
+        {
+          projectTitle: "",
+          projectDates: "",
+          companyName: "",
+          description_1: "",
+          id: 1,
+        },
+      ],
     };
 
     this.changeField = this.changeField.bind(this);
@@ -95,9 +105,9 @@ class App extends Component {
   // Add items to state based on button id
   addItems(e) {
     // Determine which type of objec to add to state
-    let bucket = e.target.id;
+    let bucket = e.target.className;
     let objectToAdd = {};
-    if (bucket === "educationExperience") {
+    if (bucket === "educationInformation") {
       objectToAdd = {
         degree: "",
         degreeDescription: "",
@@ -109,7 +119,7 @@ class App extends Component {
         id: 1,
       };
       bucket = "educationInformation";
-    } else if (bucket === "workExperience") {
+    } else if (bucket === "workInformation") {
       objectToAdd = {
         jobTitle: "",
         workDates: "",
@@ -118,6 +128,14 @@ class App extends Component {
         id: 1,
       };
       bucket = "workInformation";
+    } else if (bucket === "projectInformation") {
+      objectToAdd = {
+        projectTitle: "",
+        projectDates: "",
+        description_1: "",
+        companyName: "",
+        id: 1,
+      };
     }
 
     // Set the state with the object
@@ -191,15 +209,26 @@ class App extends Component {
           id: 1,
         },
       ],
+
+      projectInformation: [
+        {
+          projectTitle: "",
+          projectDates: "",
+          companyName: "",
+          description_1: "",
+          id: 1,
+        },
+      ],
     });
   }
 
   // Add button for description
   addDescription(e) {
     let itemId = parseInt(e.target.parentNode.className);
+    let bucket = e.target.className;
 
     this.setState({
-      workInformation: this.state.workInformation.map((x) => {
+      [bucket]: this.state[bucket].map((x) => {
         if (x.id === itemId) {
           // Count the number of descriptions already present
           let keys = Object.keys(x);
@@ -220,11 +249,12 @@ class App extends Component {
 
   // Delete description
   deleteDescription(e) {
+    let bucket = e.target.parentNode.className;
     let itemId = parseInt(e.target.parentNode.parentNode.className);
     let descriptionId = e.target.className;
 
     this.setState({
-      workInformation: this.state.workInformation.map((x) => {
+      [bucket]: this.state[bucket].map((x) => {
         if (x.id === itemId) {
           x = Object.fromEntries(
             Object.entries(x).filter(([key]) => key !== descriptionId)
@@ -288,6 +318,7 @@ class App extends Component {
           <h1>Enter Your Work Experience</h1>
 
           <PracticalExperience
+            bucket="workInformation"
             checkChange={this.changeField}
             currentState={this.state}
             addExperience={this.addItems}
@@ -295,16 +326,28 @@ class App extends Component {
             addDescription={this.addDescription}
             deleteDescription={this.deleteDescription}
           ></PracticalExperience>
+
+          <h1>Enter your relevant Projects</h1>
+
+          <PracticalExperience
+            bucket="projectInformation"
+            checkChange={this.changeField}
+            currentState={this.state}
+            addExperience={this.addItems}
+            deleteItems={this.deleteItems}
+            addDescription={this.addDescription}
+            deleteDescription={this.deleteDescription}
+          ></PracticalExperience>
+
+          <h1>Enter your skills</h1>
+          <Skills
+            currentState={this.state}
+            addSkills={this.addSkills}
+            deleteSkill={this.deleteSkill}
+          ></Skills>
+
+          <ClearButton clear={this.clear}></ClearButton>
         </div>
-
-        <h1>Enter your skills</h1>
-        <Skills
-          currentState={this.state}
-          addSkills={this.addSkills}
-          deleteSkill={this.deleteSkill}
-        ></Skills>
-
-        <ClearButton clear={this.clear}></ClearButton>
 
         <div id="preview-screen" className="container-col">
           <Preview currentState={this.state}></Preview>

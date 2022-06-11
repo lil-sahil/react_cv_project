@@ -10,7 +10,7 @@ export class EducationExperience extends Component {
 
   render() {
     return (
-      <div id="education-information">
+      <div className="educationInformation">
         {createFormElements(
           this.props.currentState,
           this.props.checkChange,
@@ -18,7 +18,10 @@ export class EducationExperience extends Component {
           this.props.deleteItems
         )}
 
-        <button id="educationExperience" onClick={this.props.addExperience}>
+        <button
+          className="educationInformation"
+          onClick={this.props.addExperience}
+        >
           +
         </button>
       </div>
