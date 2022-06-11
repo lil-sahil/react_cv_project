@@ -16,11 +16,11 @@ class App extends Component {
       // General Information
       generalInformation: [
         {
-          name: "",
-          email: "",
-          phoneNumber: "",
-          country: "",
-          proffessionalDesignation: "",
+          name: "Sahil Nagpal",
+          email: "sahil.nagpal@magna.com",
+          phoneNumber: "437-770-1010",
+          gitHub: "lil-sahil",
+          proffessionalDesignation: "EIT (Engineer in Training)",
           id: 1,
         },
       ],
@@ -177,7 +177,7 @@ class App extends Component {
           name: "",
           email: "",
           phoneNumber: "",
-          country: "",
+          gitHub: "",
           proffessionalDesignation: "",
           id: 1,
         },
