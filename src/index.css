@@ -50,6 +50,7 @@
   padding: 1rem;
   height: 100%;
   font-family: var(--main-font);
+  color: var(--secondary-color);
 }
 
 /* Preview Sidebar */
@@ -65,6 +66,12 @@
 }
 
 
+/* Preview General */
+
+.info-icon{
+  display: inline;
+  margin-right: 1rem;
+}
 
 #preview-general > div {
   margin-top: 1rem;
@@ -72,10 +79,18 @@
 
 #preview-general > .prof-designation {
   text-align: left;
+  font-size: 1rem;
+  margin-top: 0;
 }
 
-/* Preview General */
 #preview-general > .name {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-family: 'Roboto', sans-serif;
 }
+
+#preview-general > .phone, .email, .git-hub {
+  margin: 2rem 0 0 3rem;
+}
+
+
+/* Techincal Skills */

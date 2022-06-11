@@ -25,16 +25,22 @@ class Preview extends Component {
               }
             </div>
             <div className="phone">
-              <FaPhoneAlt />
+              <div className="info-icon">
+                <FaPhoneAlt />
+              </div>
               {this.props.currentState.generalInformation[0].phoneNumber}
             </div>
             <div className="email">
-              <FaEnvelope />
+              <div className="info-icon">
+                <FaEnvelope />
+              </div>
 
               {this.props.currentState.generalInformation[0].email}
             </div>
             <div className="git-hub">
-              <FaGithub />
+              <div className="info-icon">
+                <FaGithub />
+              </div>
 
               {this.props.currentState.generalInformation[0].gitHub}
             </div>
