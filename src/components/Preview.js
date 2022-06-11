@@ -46,7 +46,16 @@ class Preview extends Component {
             </div>
           </div>
 
-          <div id="preview-skills"></div>
+          <div id="preview-skills">
+            <div className="preview-sidebar-heading">
+              <span>Technical Skills</span>
+            </div>
+            <div id="skills">
+              {this.props.currentState.technicalSkills.map((skill) => {
+                return <div className="skill">{skill}</div>;
+              })}
+            </div>
+          </div>
 
           <div id="preview-education"></div>
         </div>

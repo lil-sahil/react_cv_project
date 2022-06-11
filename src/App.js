@@ -268,6 +268,9 @@ class App extends Component {
   // Add Skills
   addSkills(e) {
     let fieldValue = e.target.previousElementSibling.value;
+    if (fieldValue === "") {
+      return 1;
+    }
     // When button is presses the skill is appended to the state.
     this.setState(
       {
