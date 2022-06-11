@@ -5,6 +5,7 @@ import EducationExperience from "./components/EducationExperience";
 import PracticalExperience from "./components/PracticalExperience";
 import "./index.css";
 import ClearButton from "./components/ClearButton";
+import Skills from "./components/Skills";
 
 class App extends Component {
   constructor() {
@@ -36,6 +37,8 @@ class App extends Component {
         },
       ],
 
+      technicalSkills: [],
+
       workInformation: [
         {
           jobTitle: "",
@@ -53,6 +56,8 @@ class App extends Component {
     this.clear = this.clear.bind(this);
     this.addDescription = this.addDescription.bind(this);
     this.deleteDescription = this.deleteDescription.bind(this);
+    this.addSkills = this.addSkills.bind(this);
+    this.deleteSkill = this.deleteSkill.bind(this);
   }
 
   // Check for change of fields
@@ -158,6 +163,8 @@ class App extends Component {
         },
       ],
 
+      technicalSkills: [],
+
       workInformation: [
         {
           jobTitle: "",
@@ -211,6 +218,33 @@ class App extends Component {
     });
   }
 
+  // Add Skills
+  addSkills(e) {
+    let fieldValue = e.target.previousElementSibling.value;
+    // When button is presses the skill is appended to the state.
+    this.setState(
+      {
+        technicalSkills: this.state.technicalSkills.concat(fieldValue),
+      },
+      () => (e.target.previousElementSibling.value = "")
+    );
+  }
+
+  // DeleteSkills
+  deleteSkill(e) {
+    let skillToDelete = e.target.id;
+    console.log(skillToDelete);
+
+    this.setState(
+      {
+        technicalSkills: this.state.technicalSkills.filter(
+          (skill) => skill !== skillToDelete
+        ),
+      },
+      () => console.log(this.state)
+    );
+  }
+
   render() {
     return (
       <div className="container-row">
@@ -241,6 +275,13 @@ class App extends Component {
             deleteDescription={this.deleteDescription}
           ></PracticalExperience>
         </div>
+
+        <h1>Enter your skills</h1>
+        <Skills
+          currentState={this.state}
+          addSkills={this.addSkills}
+          deleteSkill={this.deleteSkill}
+        ></Skills>
 
         <ClearButton clear={this.clear}></ClearButton>
 
