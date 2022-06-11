@@ -11,6 +11,15 @@ class Preview extends Component {
   render() {
     return (
       <div id="preview-container">
+        {/* Preview Sidebar */}
+        {/* General Information */}
+        {/* Skills */}
+        {/* Education */}
+
+        {/* Preview Main */}
+        {/* Preview Objective */}
+        {/* Preview Work Experience */}
+
         {/* Preview Header */}
         <div id="preview-header">
           <div id="main-title">CV Application</div>

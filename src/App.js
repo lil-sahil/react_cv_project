@@ -6,6 +6,7 @@ import PracticalExperience from "./components/PracticalExperience";
 import "./index.css";
 import ClearButton from "./components/ClearButton";
 import Skills from "./components/Skills";
+import Objective from "./components/Objective";
 
 class App extends Component {
   constructor() {
@@ -23,6 +24,8 @@ class App extends Component {
           id: 1,
         },
       ],
+
+      objectiveInformation: "",
 
       educationInformation: [
         {
@@ -58,6 +61,18 @@ class App extends Component {
     this.deleteDescription = this.deleteDescription.bind(this);
     this.addSkills = this.addSkills.bind(this);
     this.deleteSkill = this.deleteSkill.bind(this);
+    this.objectiveChangeField = this.objectiveChangeField.bind(this);
+  }
+
+  // Check for change of Objective Field
+
+  objectiveChangeField(e) {
+    this.setState(
+      {
+        objectiveInformation: e.target.value,
+      },
+      () => console.log(this.state)
+    );
   }
 
   // Check for change of fields
@@ -149,6 +164,8 @@ class App extends Component {
           id: 1,
         },
       ],
+
+      objectiveInformation: "",
 
       educationInformation: [
         {
@@ -249,6 +266,10 @@ class App extends Component {
     return (
       <div className="container-row">
         <div id="information-enter-screen">
+          <h1>Enter your Objective</h1>
+
+          <Objective checkChange={this.objectiveChangeField}></Objective>
+
           <h1>Enter Your Information</h1>
           <GeneralInformation
             checkChange={this.changeField}
