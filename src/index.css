@@ -9,6 +9,7 @@
   --main-font: 'Roboto', sans-serif;
   --primary-color: #538eed;
   --secondary-color: #313033;
+  --preview-sidebar-background-color: #e9ecf0;
 }
 
 /* Global classes */
@@ -66,6 +67,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  background-color: var(--preview-sidebar-background-color);
 }
 
 
@@ -108,7 +110,7 @@
 }
 
 .preview-sidebar-heading > span {
-  background-color: #fff;
+  background-color: var(--preview-sidebar-background-color);
 }
 
 #skills {
@@ -126,4 +128,19 @@
   background-color: var(--primary-color);
   color: #fff;
   margin: 0 0.5rem 0.5rem 0;
+}
+
+
+/* Education */
+
+#preview-education{
+  width: 100%;
+}
+
+#education {
+  margin-top: 1.5rem;
+}
+
+.education-entry {
+  margin-top: 1rem;
 }

@@ -57,7 +57,27 @@ class Preview extends Component {
             </div>
           </div>
 
-          <div id="preview-education"></div>
+          <div id="preview-education">
+            <div className="preview-sidebar-heading">
+              <span>Education</span>
+            </div>
+
+            <div id="education">
+              {this.props.currentState.educationInformation.map((edu) => {
+                return (
+                  <div className="education-entry">
+                    {edu.degree}, {edu.degreeDescription}
+                    <br></br>
+                    {edu.schoolName}
+                    <br></br>
+                    {edu.attendDates} | {edu.city}, {edu.stateProvince},{" "}
+                    {edu.country}
+                    <br></br>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
 
         {/* General Information */}
