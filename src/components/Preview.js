@@ -11,9 +11,10 @@ class Preview extends Component {
 
   render() {
     return (
-      <div id="preview-container">
+      <div id="preview-container" className="container-row">
         {/* Preview Sidebar */}
         <div id="preview-sidebar">
+          {/* Preview General */}
           <div id="preview-general">
             <div className="name font-color">
               {this.props.currentState.generalInformation[0].name.toUpperCase()}
@@ -46,6 +47,7 @@ class Preview extends Component {
             </div>
           </div>
 
+          {/* Preview Skills */}
           <div id="preview-skills">
             <div className="preview-sidebar-heading">
               <span>Technical Skills</span>
@@ -56,7 +58,7 @@ class Preview extends Component {
               })}
             </div>
           </div>
-
+          {/* Preview Education */}
           <div id="preview-education">
             <div className="preview-sidebar-heading">
               <span>Education</span>
@@ -76,6 +78,32 @@ class Preview extends Component {
                   </div>
                 );
               })}
+            </div>
+          </div>
+        </div>
+
+        <div id="preview-main">
+          {/* Preview Objective */}
+          <div id="preview-objective">
+            <div className="preview-main-heading">
+              <span className="preview-heading-color">Obj</span>ective
+            </div>
+
+            <div id="objective-entry">
+              {this.props.currentState.objectiveInformation}
+            </div>
+          </div>
+          {/* Preview Work Experience */}
+          <div id="preview-work-experience">
+            <div className="preview-main-heading">
+              <span className="preview-heading-color">Work</span> Experience
+            </div>
+          </div>
+
+          {/* Preview Projects */}
+          <div id="preview-project-experience">
+            <div className="preview-main-heading">
+              <span className="preview-heading-color">Project</span> Experience
             </div>
           </div>
         </div>

@@ -53,13 +53,15 @@
   font-family: var(--main-font);
   color: var(--secondary-color);
   width: 100%;
+
 }
 
 
 
 /* Preview Sidebar */
 #preview-sidebar {
-  width: 20rem;
+  min-width: 20rem;
+  max-width: 20rem;
   border: black 1px solid;
   height: 100%;
   padding: 1rem 0.5rem;
@@ -144,3 +146,44 @@
 .education-entry {
   margin-top: 1rem;
 }
+
+
+/* Preview Main */
+#preview-main {
+  height: 100%;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.preview-main-heading {
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.preview-heading-color {
+  color: var(--primary-color);
+}
+
+
+/* Objective */
+#preview-objective {
+ text-align: left;
+ margin-top:1rem;
+ width: 100%;
+ text-align: justify;
+}
+
+/* Work Experience */
+#preview-work-experience{
+  text-align: left;
+  width: 100%;
+  text-align: justify;
+}
+
