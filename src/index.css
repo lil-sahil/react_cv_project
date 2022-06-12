@@ -14,6 +14,8 @@ ul {
   --primary-color: #538eed;
   --secondary-color: #313033;
   --preview-sidebar-background-color: #e9ecf0;
+  --font-size-preview-main: 14px;
+  --font-size-preview-sidebar: 14px;
 }
 
 /* Global classes */
@@ -44,19 +46,18 @@ ul {
 
 /* Preview Screen */
 #preview-screen {
-  height: 100vh;
-  width: 50vw;
+  /* height: 100vh;
+  width: 50vw; */
   overflow: hidden;
-  border-left: 1px solid black;
 }
 
 /* Preview Container */
 #preview-container {
-  padding: 1rem;
-  height: 100%;
+  padding: 0.25rem;
+  height: 11in; 
   font-family: var(--main-font);
   color: var(--secondary-color);
-  width: 100%;
+  width: 8.5in;
 
 }
 
@@ -64,9 +65,8 @@ ul {
 
 /* Preview Sidebar */
 #preview-sidebar {
-  min-width: 20rem;
-  max-width: 20rem;
-  border: black 1px solid;
+  min-width: 35%;
+  max-width: 35%;
   height: 100%;
   padding: 1rem 0.5rem;
   display: flex;
@@ -74,6 +74,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   background-color: var(--preview-sidebar-background-color);
+  font-size: var(--font-size-preview-sidebar);
 }
 
 
@@ -81,7 +82,7 @@ ul {
 
 .info-icon{
   display: inline;
-  margin-right: 1rem;
+  margin-right: 0.4rem;
 }
 
 #preview-general > div {
@@ -95,12 +96,12 @@ ul {
 }
 
 #preview-general > .name {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: 'Roboto', sans-serif;
 }
 
 #preview-general > .phone, .email, .git-hub {
-  margin: 2rem 0 0 3rem;
+  margin: 2rem 0 0 1rem;
 }
 
 
@@ -110,7 +111,7 @@ ul {
 }
 .preview-sidebar-heading {
   text-align: left;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border-bottom: 1px solid var(--secondary-color);
   line-height: 0.1rem;
 }
@@ -161,12 +162,16 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid black;
+  font-size: var(--font-size-preview-main)
+}
+
+#preview-main > div {
+  margin-top: 0.8rem;
 }
 
 .preview-main-heading {
   text-align: left;
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: 800;
   margin-bottom: 1rem;
 }
