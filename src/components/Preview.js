@@ -98,12 +98,54 @@ class Preview extends Component {
             <div className="preview-main-heading">
               <span className="preview-heading-color">Work</span> Experience
             </div>
+
+            <div className="work-entry">
+              {this.props.currentState.workInformation.map((work) => {
+                let descriptions = [];
+                for (let desc in work) {
+                  if (desc.includes("description")) {
+                    descriptions.push(<li>{work[desc]}</li>);
+                  }
+                }
+
+                return (
+                  <div className="grid-display">
+                    <div className="preview-date">{work.workDates}</div>
+                    <div className="preview-small-heading">{work.jobTitle}</div>
+                    <div className="preview-company">{work.companyName}</div>
+                    <ul className="preview-description">{descriptions}</ul>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
           {/* Preview Projects */}
           <div id="preview-project-experience">
             <div className="preview-main-heading">
               <span className="preview-heading-color">Project</span> Experience
+            </div>
+
+            <div className="project-entry">
+              {this.props.currentState.projectInformation.map((project) => {
+                let descriptions = [];
+                for (let desc in project) {
+                  if (desc.includes("description")) {
+                    descriptions.push(<li>{project[desc]}</li>);
+                  }
+                }
+
+                return (
+                  <div className="grid-display">
+                    <div className="preview-date">{project.projectDates}</div>
+                    <div className="preview-small-heading">
+                      {project.projectTitle}
+                    </div>
+                    <div className="preview-company">{project.companyName}</div>
+                    <ul className="preview-description">{descriptions}</ul>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

@@ -40,7 +40,7 @@ class App extends Component {
         },
       ],
 
-      technicalSkills: [],
+      technicalSkills: ["Python", "Javascript", "HTML", "CSS", "MERN"],
 
       workInformation: [
         {
