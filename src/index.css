@@ -33,6 +33,10 @@ body {
 
 /* Main Container */
 
+#header {
+  padding:2rem 0;
+}
+
 .main-container {
   width: 80vw;
   margin: auto;
@@ -59,7 +63,9 @@ body {
 .background{
   width: 100vw;
   background-color: #fff;
+  padding-top: 2rem;
 }
+
 
 
 /* Information Enter Screen */

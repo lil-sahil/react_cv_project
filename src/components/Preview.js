@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { FaPhoneAlt, FaEnvelope, FaGithub } from "react-icons/fa";
 
-// Utils
-import { createPreviewElements } from "../utils/createPreviewElements";
-
 class Preview extends Component {
   constructor(props) {
     super(props);
@@ -72,8 +69,8 @@ class Preview extends Component {
                     <br></br>
                     {edu.schoolName}
                     <br></br>
-                    {edu.attendDates} | {edu.city}, {edu.stateProvince},{" "}
-                    {edu.country}
+                    {edu.startDate} - {edu.endDate} | {edu.city},{" "}
+                    {edu.stateProvince}, {edu.country}
                     <br></br>
                   </div>
                 );
@@ -110,7 +107,7 @@ class Preview extends Component {
 
                 return (
                   <div className="grid-display">
-                    <div className="preview-date">{work.workDates}</div>
+                    <div className="preview-date">{`${work.startDate} - ${work.endDate}`}</div>
                     <div className="preview-small-heading">{work.jobTitle}</div>
                     <div className="preview-company">{work.companyName}</div>
                     <ul className="preview-description">{descriptions}</ul>
@@ -137,7 +134,7 @@ class Preview extends Component {
 
                 return (
                   <div className="grid-display">
-                    <div className="preview-date">{project.projectDates}</div>
+                    <div className="preview-date">{`${project.startDate} - ${project.endDate}`}</div>
                     <div className="preview-small-heading">
                       {project.projectTitle}
                     </div>

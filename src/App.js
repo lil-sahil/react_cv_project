@@ -32,7 +32,8 @@ class App extends Component {
           degree: "",
           degreeDescription: "",
           schoolName: "",
-          attendDates: "",
+          startDate: "",
+          endDate: "",
           city: "",
           stateProvince: "",
           country: "",
@@ -45,7 +46,8 @@ class App extends Component {
       workInformation: [
         {
           jobTitle: "",
-          workDates: "",
+          startDate: "",
+          endDate: "",
           companyName: "",
           description_1: "",
           id: 1,
@@ -55,7 +57,8 @@ class App extends Component {
       projectInformation: [
         {
           projectTitle: "",
-          projectDates: "",
+          startDate: "",
+          endDate: "",
           companyName: "",
           description_1: "",
           id: 1,
@@ -112,7 +115,8 @@ class App extends Component {
         degree: "",
         degreeDescription: "",
         schoolName: "",
-        attendDates: "",
+        startDate: "",
+        endDate: "",
         city: "",
         stateProvince: "",
         country: "",
@@ -122,7 +126,8 @@ class App extends Component {
     } else if (bucket === "workInformation") {
       objectToAdd = {
         jobTitle: "",
-        workDates: "",
+        startDate: "",
+        endDate: "",
         companyName: "",
         description_1: "",
         id: 1,
@@ -131,7 +136,8 @@ class App extends Component {
     } else if (bucket === "projectInformation") {
       objectToAdd = {
         projectTitle: "",
-        projectDates: "",
+        startDate: "",
+        endDate: "",
         description_1: "",
         companyName: "",
         id: 1,
@@ -190,7 +196,8 @@ class App extends Component {
           degree: "",
           degreeDescription: "",
           schoolName: "",
-          attendDates: "",
+          startDate: "",
+          endDate: "",
           city: "",
           stateProvince: "",
           country: "",
@@ -203,7 +210,8 @@ class App extends Component {
       workInformation: [
         {
           jobTitle: "",
-          workDates: "",
+          startDate: "",
+          endDate: "",
           companyName: "",
           description_1: "",
           id: 1,
@@ -213,7 +221,8 @@ class App extends Component {
       projectInformation: [
         {
           projectTitle: "",
-          projectDates: "",
+          startDate: "",
+          endDate: "",
           companyName: "",
           description_1: "",
           id: 1,
@@ -298,7 +307,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <div>
+        <div id="header">
           <div id="main-title" className="main-container">
             Perfect Resume
           </div>
@@ -307,15 +316,6 @@ class App extends Component {
         <div className="background">
           <div className="container-row main-container">
             <div id="information-enter-screen">
-              <h1>
-                Enter the required information and watch the preview of how your
-                resume will look when printed on a letter sized paper.
-              </h1>
-
-              <h2 className="explanation">
-                Give a breif overview of what you are looking for in this new
-                oppurtunity.
-              </h2>
               <Objective checkChange={this.objectiveChangeField}></Objective>
 
               <GeneralInformation
@@ -323,16 +323,12 @@ class App extends Component {
                 currentState={this.state}
               ></GeneralInformation>
 
-              <h1>Enter Your Educational Experience</h1>
-
               <EducationExperience
                 checkChange={this.changeField}
                 currentState={this.state}
                 addExperience={this.addItems}
                 deleteItems={this.deleteItems}
               ></EducationExperience>
-
-              <h1>Enter Your Work Experience</h1>
 
               <PracticalExperience
                 bucket="workInformation"
@@ -344,8 +340,6 @@ class App extends Component {
                 deleteDescription={this.deleteDescription}
               ></PracticalExperience>
 
-              <h1>Enter your relevant Projects</h1>
-
               <PracticalExperience
                 bucket="projectInformation"
                 checkChange={this.changeField}
@@ -356,7 +350,6 @@ class App extends Component {
                 deleteDescription={this.deleteDescription}
               ></PracticalExperience>
 
-              <h1>Enter your skills</h1>
               <Skills
                 currentState={this.state}
                 addSkills={this.addSkills}

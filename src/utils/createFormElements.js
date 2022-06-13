@@ -21,8 +21,13 @@ export let createFormElements = (
       if (y !== "id") {
         element = (
           <div className={informationType}>
-            <label>{convertCamelToRegular(y)}</label>
-            <input type="input" className={y} onChange={changeMethod}></input>
+            {/* <label>{convertCamelToRegular(y)}</label> */}
+            <input
+              type="input"
+              className={y}
+              onChange={changeMethod}
+              placeholder={convertCamelToRegular(y)}
+            ></input>
 
             {y.includes("description") ? (
               <button onClick={deleteDescription} className={y}>
