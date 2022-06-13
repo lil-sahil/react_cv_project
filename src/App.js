@@ -16,11 +16,11 @@ class App extends Component {
       // General Information
       generalInformation: [
         {
-          name: "Sahil Nagpal",
-          email: "sahil.nagpal@magna.com",
-          phoneNumber: "437-770-1010",
-          gitHub: "lil-sahil",
-          proffessionalDesignation: "EIT (Engineer in Training)",
+          name: "",
+          email: "",
+          phoneNumber: "",
+          gitHub: "",
+          proffessionalDesignation: "",
           id: 1,
         },
       ],
@@ -40,7 +40,7 @@ class App extends Component {
         },
       ],
 
-      technicalSkills: ["Python", "Javascript", "HTML", "CSS", "MERN"],
+      technicalSkills: [],
 
       workInformation: [
         {
@@ -297,65 +297,88 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container-row">
-        <div id="information-enter-screen">
-          <h1>Enter your Objective</h1>
-
-          <Objective checkChange={this.objectiveChangeField}></Objective>
-
-          <h1>Enter Your Information</h1>
-          <GeneralInformation
-            checkChange={this.changeField}
-            currentState={this.state}
-          ></GeneralInformation>
-
-          <h1>Enter Your Educational Experience</h1>
-
-          <EducationExperience
-            checkChange={this.changeField}
-            currentState={this.state}
-            addExperience={this.addItems}
-            deleteItems={this.deleteItems}
-          ></EducationExperience>
-
-          <h1>Enter Your Work Experience</h1>
-
-          <PracticalExperience
-            bucket="workInformation"
-            checkChange={this.changeField}
-            currentState={this.state}
-            addExperience={this.addItems}
-            deleteItems={this.deleteItems}
-            addDescription={this.addDescription}
-            deleteDescription={this.deleteDescription}
-          ></PracticalExperience>
-
-          <h1>Enter your relevant Projects</h1>
-
-          <PracticalExperience
-            bucket="projectInformation"
-            checkChange={this.changeField}
-            currentState={this.state}
-            addExperience={this.addItems}
-            deleteItems={this.deleteItems}
-            addDescription={this.addDescription}
-            deleteDescription={this.deleteDescription}
-          ></PracticalExperience>
-
-          <h1>Enter your skills</h1>
-          <Skills
-            currentState={this.state}
-            addSkills={this.addSkills}
-            deleteSkill={this.deleteSkill}
-          ></Skills>
-
-          <ClearButton clear={this.clear}></ClearButton>
+      <>
+        <div>
+          <div id="main-title" className="main-container">
+            Perfect Resume
+          </div>
         </div>
 
-        <div id="preview-screen" className="container-col">
-          <Preview currentState={this.state}></Preview>
+        <div className="background">
+          <div className="container-row main-container">
+            <div id="information-enter-screen">
+              <h1>
+                Enter the required information and watch the preview of how your
+                resume will look when printed on a letter sized paper.
+              </h1>
+
+              <h2 className="explanation">
+                Give a breif overview of what you are looking for in this new
+                oppurtunity.
+              </h2>
+              <Objective checkChange={this.objectiveChangeField}></Objective>
+
+              <GeneralInformation
+                checkChange={this.changeField}
+                currentState={this.state}
+              ></GeneralInformation>
+
+              <h1>Enter Your Educational Experience</h1>
+
+              <EducationExperience
+                checkChange={this.changeField}
+                currentState={this.state}
+                addExperience={this.addItems}
+                deleteItems={this.deleteItems}
+              ></EducationExperience>
+
+              <h1>Enter Your Work Experience</h1>
+
+              <PracticalExperience
+                bucket="workInformation"
+                checkChange={this.changeField}
+                currentState={this.state}
+                addExperience={this.addItems}
+                deleteItems={this.deleteItems}
+                addDescription={this.addDescription}
+                deleteDescription={this.deleteDescription}
+              ></PracticalExperience>
+
+              <h1>Enter your relevant Projects</h1>
+
+              <PracticalExperience
+                bucket="projectInformation"
+                checkChange={this.changeField}
+                currentState={this.state}
+                addExperience={this.addItems}
+                deleteItems={this.deleteItems}
+                addDescription={this.addDescription}
+                deleteDescription={this.deleteDescription}
+              ></PracticalExperience>
+
+              <h1>Enter your skills</h1>
+              <Skills
+                currentState={this.state}
+                addSkills={this.addSkills}
+                deleteSkill={this.deleteSkill}
+              ></Skills>
+
+              <ClearButton clear={this.clear}></ClearButton>
+            </div>
+
+            <div id="preview-screen" className="container-col">
+              <Preview currentState={this.state}></Preview>
+            </div>
+          </div>
         </div>
-      </div>
+      </>
+
+      // <div className="main-container">
+      //   <div id="main-title">Perfect Resume</div>
+
+      //   <div className="container-row">
+
+      // </div>
     );
   }
 }
