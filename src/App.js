@@ -165,8 +165,8 @@ class App extends Component {
 
   // Delete items based on id
   deleteItems(e) {
-    let itemId = parseInt(e.target.parentNode.className);
-    let informationBucket = e.target.previousSibling.className;
+    let itemId = parseInt(e.currentTarget.parentNode.classList[0]);
+    let informationBucket = e.currentTarget.previousSibling.classList[0];
 
     this.setState({
       [informationBucket]: this.state[informationBucket].filter(
