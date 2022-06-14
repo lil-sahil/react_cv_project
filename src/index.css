@@ -17,6 +17,8 @@ ul {
   --preview-sidebar-background-color: #e9ecf0;
   --font-size-preview-main: 14px;
   --font-size-preview-sidebar: 14px;
+  --delete-button-color: #d11406;
+  --delete-button-color-hover: #c91002;
 }
 
 /* Global classes */
@@ -46,7 +48,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
   background-color: #fff;
 }
 
@@ -81,6 +83,51 @@ body {
   border-radius: 5px;
   background-color: var(--preview-sidebar-background-color);
   box-shadow: 2px 2px var(--secondary-color);
+  width: 100%;
+  padding: 1rem;
+}
+
+input {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  height: 2rem;
+
+}
+
+textarea {
+  
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  height: 4rem;
+}
+
+.enter-information-heading {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  font-family: var(--main-font);
+}
+
+.enter-information-heading:not(:first-child){
+  margin-top:1rem;
+}
+
+.delete-btn-large {
+  width: 100%;
+  background-color: var(--delete-button-color);
+  border-radius: 5px;
+  height: 2rem;
+  color: #fff;
+  font-size: 1.2rem;
+  margin: auto 0;
+}
+
+.delete-btn-large:hover {
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: var(--delete-button-color-hover);
 }
 
 
@@ -142,7 +189,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-#preview-general > .phone, .email, .git-hub {
+#preview-general > .phone .email .git-hub {
   margin: 2rem 0 0 1rem;
 }
 

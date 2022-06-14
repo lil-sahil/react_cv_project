@@ -165,7 +165,7 @@ class App extends Component {
   // Delete items based on id
   deleteItems(e) {
     let itemId = parseInt(e.target.parentNode.className);
-    let informationBucket = e.target.nextSibling.className;
+    let informationBucket = e.target.previousSibling.className;
 
     this.setState({
       [informationBucket]: this.state[informationBucket].filter(
@@ -316,13 +316,16 @@ class App extends Component {
         <div className="background">
           <div className="container-row main-container">
             <div id="information-enter-screen">
+              <h1 className="enter-information-heading">Objective</h1>
               <Objective checkChange={this.objectiveChangeField}></Objective>
 
+              <h1 className="enter-information-heading">General Information</h1>
               <GeneralInformation
                 checkChange={this.changeField}
                 currentState={this.state}
               ></GeneralInformation>
 
+              <h1 className="enter-information-heading">Education</h1>
               <EducationExperience
                 checkChange={this.changeField}
                 currentState={this.state}
@@ -330,6 +333,7 @@ class App extends Component {
                 deleteItems={this.deleteItems}
               ></EducationExperience>
 
+              <h1 className="enter-information-heading">Work Experience</h1>
               <PracticalExperience
                 bucket="workInformation"
                 checkChange={this.changeField}
@@ -340,6 +344,7 @@ class App extends Component {
                 deleteDescription={this.deleteDescription}
               ></PracticalExperience>
 
+              <h1 className="enter-information-heading">Relevant Projects</h1>
               <PracticalExperience
                 bucket="projectInformation"
                 checkChange={this.changeField}
@@ -350,6 +355,7 @@ class App extends Component {
                 deleteDescription={this.deleteDescription}
               ></PracticalExperience>
 
+              <h1 className="enter-information-heading">Skills Overview</h1>
               <Skills
                 currentState={this.state}
                 addSkills={this.addSkills}
@@ -365,13 +371,6 @@ class App extends Component {
           </div>
         </div>
       </>
-
-      // <div className="main-container">
-      //   <div id="main-title">Perfect Resume</div>
-
-      //   <div className="container-row">
-
-      // </div>
     );
   }
 }

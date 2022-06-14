@@ -8,8 +8,10 @@ class Objective extends Component {
   render() {
     return (
       <div className="objectiveInformation">
-        <label>Objective</label>
-        <input onChange={this.props.checkChange}></input>
+        <textarea
+          onChange={this.props.checkChange}
+          placeholder="Objective"
+        ></textarea>
       </div>
     );
   }
