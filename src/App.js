@@ -108,7 +108,8 @@ class App extends Component {
   // Add items to state based on button id
   addItems(e) {
     // Determine which type of objec to add to state
-    let bucket = e.target.className;
+    let bucket = e.currentTarget.classList[0];
+    console.log(bucket);
     let objectToAdd = {};
     if (bucket === "educationInformation") {
       objectToAdd = {

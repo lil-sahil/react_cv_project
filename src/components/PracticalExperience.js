@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { FaPlus } from "react-icons/fa";
 
 // utils
 import { createFormElements } from "../utils/createFormElements";
@@ -21,10 +22,10 @@ export class PracticalExperience extends Component {
         )}
 
         <button
-          className={this.props.bucket}
+          className={`${this.props.bucket} add-btn-large`}
           onClick={this.props.addExperience}
         >
-          +
+          <FaPlus />
         </button>
       </div>
     );
