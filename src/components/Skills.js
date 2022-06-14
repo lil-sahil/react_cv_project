@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { IoMdAddCircle } from "react-icons/io";
+import { ImCross } from "react-icons/im";
 
 class Skills extends Component {
   constructor(props) {
@@ -9,8 +11,10 @@ class Skills extends Component {
     return (
       <div id="technical-skills">
         <div id="skills-form">
-          <input type="input"></input>
-          <button onClick={this.props.addSkills}>Add</button>
+          <input type="input" placeholder="Enter a Skill"></input>
+          <button onClick={this.props.addSkills} className="add-btn-small">
+            <IoMdAddCircle />
+          </button>
         </div>
 
         <div id="added-skills">
@@ -19,7 +23,7 @@ class Skills extends Component {
               <div className="skill">
                 {skill}
                 <button id={skill} onClick={this.props.deleteSkill}>
-                  x
+                  <ImCross />
                 </button>
               </div>
             );

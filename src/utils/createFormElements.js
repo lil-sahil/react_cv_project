@@ -1,5 +1,7 @@
 import { convertCamelToRegular } from "./camelCasetoRegular";
 import { RiDeleteBinFill } from "react-icons/ri";
+import { ImCross } from "react-icons/im";
+import { IoMdAddCircle } from "react-icons/io";
 
 export let createFormElements = (
   currentState,
@@ -22,20 +24,25 @@ export let createFormElements = (
       if (y !== "id") {
         element = (
           <div className={informationType}>
-            {/* <label>{convertCamelToRegular(y)}</label> */}
-            <input
-              type="input"
-              className={y}
-              onChange={changeMethod}
-              placeholder={convertCamelToRegular(y)}
-            ></input>
-
             {y.includes("description") ? (
-              <button onClick={deleteDescription} className={y}>
-                -
-              </button>
+              <div className="description-style">
+                <textarea
+                  className={y}
+                  onChange={changeMethod}
+                  placeholder="Enter a description"
+                ></textarea>
+
+                <button onClick={deleteDescription} className={y}>
+                  <ImCross />
+                </button>
+              </div>
             ) : (
-              false
+              <input
+                type="input"
+                className={y}
+                onChange={changeMethod}
+                placeholder={convertCamelToRegular(y)}
+              ></input>
             )}
           </div>
         );
@@ -47,8 +54,11 @@ export let createFormElements = (
       <div className={x.id}>
         {arr}
         {descriptionAddButton.includes(informationType) ? (
-          <button onClick={addDescription} className={informationType}>
-            Add Description
+          <button
+            onClick={addDescription}
+            className={`${informationType} add-btn-small`}
+          >
+            <IoMdAddCircle />
           </button>
         ) : (
           false

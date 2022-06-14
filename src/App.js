@@ -90,9 +90,13 @@ class App extends Component {
 
   // Check for change of fields
   changeField(e) {
-    let informationBucket = e.target.parentNode.className;
-    let elementId = parseInt(e.target.parentNode.parentNode.className);
+    let informationBucket = e.target.parentNode.parentNode.className;
+    let elementId = parseInt(
+      e.target.parentNode.parentNode.parentNode.className
+    );
     let informationType = e.target.className;
+
+    console.log(informationBucket);
 
     this.setState((prevState) => {
       let filteredItem = prevState[`${informationBucket}`].filter(
@@ -234,8 +238,8 @@ class App extends Component {
 
   // Add button for description
   addDescription(e) {
-    let itemId = parseInt(e.target.parentNode.className);
-    let bucket = e.target.className;
+    let itemId = parseInt(e.currentTarget.parentNode.classList[0]);
+    let bucket = e.currentTarget.classList[0];
 
     this.setState({
       [bucket]: this.state[bucket].map((x) => {
@@ -259,9 +263,11 @@ class App extends Component {
 
   // Delete description
   deleteDescription(e) {
-    let bucket = e.target.parentNode.className;
-    let itemId = parseInt(e.target.parentNode.parentNode.className);
-    let descriptionId = e.target.className;
+    let bucket = e.currentTarget.parentNode.parentNode.className;
+    let itemId = parseInt(
+      e.currentTarget.parentNode.parentNode.parentNode.className
+    );
+    let descriptionId = e.currentTarget.className;
 
     this.setState({
       [bucket]: this.state[bucket].map((x) => {
@@ -277,32 +283,26 @@ class App extends Component {
 
   // Add Skills
   addSkills(e) {
-    let fieldValue = e.target.previousElementSibling.value;
+    let fieldValue = e.currentTarget.previousElementSibling.value;
+    e.currentTarget.previousElementSibling.value = "";
     if (fieldValue === "") {
       return 1;
     }
     // When button is presses the skill is appended to the state.
-    this.setState(
-      {
-        technicalSkills: this.state.technicalSkills.concat(fieldValue),
-      },
-      () => (e.target.previousElementSibling.value = "")
-    );
+    this.setState({
+      technicalSkills: this.state.technicalSkills.concat(fieldValue),
+    });
   }
 
   // DeleteSkills
   deleteSkill(e) {
-    let skillToDelete = e.target.id;
-    console.log(skillToDelete);
+    let skillToDelete = e.currentTarget.id;
 
-    this.setState(
-      {
-        technicalSkills: this.state.technicalSkills.filter(
-          (skill) => skill !== skillToDelete
-        ),
-      },
-      () => console.log(this.state)
-    );
+    this.setState({
+      technicalSkills: this.state.technicalSkills.filter(
+        (skill) => skill !== skillToDelete
+      ),
+    });
   }
 
   render() {
@@ -325,6 +325,13 @@ class App extends Component {
                 checkChange={this.changeField}
                 currentState={this.state}
               ></GeneralInformation>
+
+              <h1 className="enter-information-heading">Skills Overview</h1>
+              <Skills
+                currentState={this.state}
+                addSkills={this.addSkills}
+                deleteSkill={this.deleteSkill}
+              ></Skills>
 
               <h1 className="enter-information-heading">Education</h1>
               <EducationExperience
@@ -355,13 +362,6 @@ class App extends Component {
                 addDescription={this.addDescription}
                 deleteDescription={this.deleteDescription}
               ></PracticalExperience>
-
-              <h1 className="enter-information-heading">Skills Overview</h1>
-              <Skills
-                currentState={this.state}
-                addSkills={this.addSkills}
-                deleteSkill={this.deleteSkill}
-              ></Skills>
 
               <ClearButton clear={this.clear}></ClearButton>
             </div>
