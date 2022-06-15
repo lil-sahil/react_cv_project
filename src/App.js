@@ -7,6 +7,8 @@ import "./index.css";
 import ClearButton from "./components/ClearButton";
 import Skills from "./components/Skills";
 import Objective from "./components/Objective";
+import { Example } from "./components/example";
+import ExampleResume from "./components/ExampleResume";
 
 class App extends Component {
   constructor() {
@@ -20,7 +22,7 @@ class App extends Component {
           email: "",
           phoneNumber: "",
           gitHub: "",
-          proffessionalDesignation: "",
+          professionalDesignation: "",
           id: 1,
         },
       ],
@@ -75,6 +77,7 @@ class App extends Component {
     this.addSkills = this.addSkills.bind(this);
     this.deleteSkill = this.deleteSkill.bind(this);
     this.objectiveChangeField = this.objectiveChangeField.bind(this);
+    this.exampleResume = this.exampleResume.bind(this);
   }
 
   // Check for change of Objective Field
@@ -189,7 +192,7 @@ class App extends Component {
           email: "",
           phoneNumber: "",
           gitHub: "",
-          proffessionalDesignation: "",
+          professionalDesignation: "",
           id: 1,
         },
       ],
@@ -305,6 +308,11 @@ class App extends Component {
     });
   }
 
+  // Example Resume
+  exampleResume() {
+    this.setState(Example());
+  }
+
   render() {
     return (
       <>
@@ -364,6 +372,8 @@ class App extends Component {
               ></PracticalExperience>
 
               <ClearButton clear={this.clear}></ClearButton>
+
+              <ExampleResume showExample={this.exampleResume}></ExampleResume>
             </div>
 
             <div id="preview-screen" className="container-col">

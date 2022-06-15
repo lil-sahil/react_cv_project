@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { GrPowerReset } from "react-icons/gr";
+import { GrClearOption } from "react-icons/gr";
 
 class ClearButton extends Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class ClearButton extends Component {
   render() {
     return (
       <button onClick={this.props.clear} className="reset-btn">
-        Reset <GrPowerReset />
+        <GrClearOption />
       </button>
     );
   }
