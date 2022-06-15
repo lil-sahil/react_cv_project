@@ -119,8 +119,6 @@ export let Example = () => {
           "Utilized C++ for code development, Robot Operating System (ROS) for code deployment and Gazebo simulator for virtual code testing.",
         description_3:
           "Designed and selected appropriate sensors and servo drives to gain a competitive edge in the challenges.",
-        description_4:
-          "Group finished 1st place overall, out of a total of 15 groups.",
         id: 3,
       },
     ],

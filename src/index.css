@@ -1,3 +1,4 @@
+/* Global Clears */
 * {
   margin: 0;
   padding: 0;
@@ -34,12 +35,20 @@ body {
 
 
 
-/* Main Container */
+/* Header */
 
 #header {
   padding:2rem 0;
 }
 
+#main-title {
+  font-family: var(--title-font);
+  font-size: 4rem;
+  color: var(--primary-color);
+  text-align: left;
+}
+
+/* Main Containers */
 .main-container {
   width: 80vw;
   margin: auto;
@@ -71,13 +80,7 @@ body {
 
 
 
-/* Information Enter Screen */
-#main-title {
-  font-family: var(--title-font);
-  font-size: 4rem;
-  color: var(--primary-color);
-  text-align: left;
-}
+/* INFORMATION ENTER SCREEN */
 
 #information-enter-screen {
   border: var(--primary-color) 2px solid;
@@ -118,6 +121,17 @@ textarea {
   color: #fff;
 }
 
+
+.educationInformation > div, .workInformation > div, .projectInformation > div, #general-information > div, #technical-skills, .objectiveInformation {
+  border: var(--secondary-color) 2px solid;
+  border-radius: 10px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+
+/* Information Enter Heading Styling */
+
 .enter-information-heading {
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
@@ -128,6 +142,8 @@ textarea {
 .enter-information-heading:not(:first-child){
   margin-top:1rem;
 }
+
+/* Large Delete Button */
 
 .delete-btn-large {
   width: 100%;
@@ -146,6 +162,8 @@ textarea {
 }
 
 
+/* Large Add Button */
+
 .add-btn-large {
   width: 100%;
   background-color: var(--add-buttton-color);
@@ -160,6 +178,7 @@ textarea {
   cursor: pointer;
 }
 
+/* Description Fields */
 .description-style {
   display: flex;
   flex-direction: row;
@@ -175,18 +194,13 @@ textarea {
 }
 
 
-.educationInformation > div, .workInformation > div, .projectInformation > div, #general-information > div, #technical-skills, .objectiveInformation {
-  border: var(--secondary-color) 2px solid;
-  border-radius: 10px;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-}
-
 div > .description-style {
   border: none;
   padding: 0 0 0 0.5rem;
   margin-bottom: 0;
 }
+
+/* Small Add Button */
 
 .add-btn-small {
   border: none;
@@ -198,12 +212,14 @@ div > .description-style {
 }
 
 #added-skills {
-  clear: both;
+  clear: both; /*Needed to clear as used float in the previous style*/
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
 }  
+
+/* Techincal Skills */
 
 #added-skills > .skill > button {
   margin-left: 0.5rem;
@@ -213,6 +229,8 @@ div > .description-style {
   cursor: pointer;
 }
 
+
+/* Reset Button */
 .reset-btn {
   margin-top: 5rem;
   width: 100%;
@@ -228,6 +246,8 @@ div > .description-style {
   font-size: 1.5rem;
 }
 
+
+/* Example Resume Button */
 
 #example-resume-btn > button{
   width: 100%;
@@ -246,7 +266,9 @@ div > .description-style {
   cursor: pointer;
 }
 
-/* Preview Screen */
+
+/* PREVIEW SCREEN */
+
 #preview-screen {
   position: sticky;
   top: 0;
