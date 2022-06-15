@@ -107,7 +107,7 @@ class Preview extends Component {
 
                 return (
                   <div className="grid-display">
-                    <div className="preview-date">{`${work.startDate} - ${work.endDate}`}</div>
+                    <div className="preview-date">{`${work.startDate} ${work.endDate}`}</div>
                     <div className="preview-small-heading">{work.jobTitle}</div>
                     <div className="preview-company">{work.companyName}</div>
                     <ul className="preview-description">{descriptions}</ul>
@@ -134,7 +134,7 @@ class Preview extends Component {
 
                 return (
                   <div className="grid-display">
-                    <div className="preview-date">{`${project.startDate} - ${project.endDate}`}</div>
+                    <div className="preview-date">{`${project.startDate} ${project.endDate}`}</div>
                     <div className="preview-small-heading">
                       {project.projectTitle}
                     </div>
@@ -146,40 +146,6 @@ class Preview extends Component {
             </div>
           </div>
         </div>
-
-        {/* General Information */}
-        {/* Skills */}
-        {/* Education */}
-
-        {/* Preview Main */}
-        {/* Preview Objective */}
-        {/* Preview Work Experience */}
-        {/* Preview Project Experience */}
-
-        {/* Preview Header */}
-        {/* <div id="preview-header">
-          <div id="main-title">CV Application</div>
-        </div> */}
-
-        {/* General Information */}
-        {/* <div id="preview-general-information">
-          {createPreviewElements(this.props.currentState, "generalInformation")}
-
-          <div id="image"></div>
-        </div> */}
-
-        {/* Educational Experience */}
-        {/* <div id="preview-educational-information">
-          {createPreviewElements(
-            this.props.currentState,
-            "educationInformation"
-          )}
-        </div> */}
-
-        {/* Work Experience */}
-        {/* <div id="preview-work-information">
-          {createPreviewElements(this.props.currentState, "workInformation")}
-        </div> */}
       </div>
     );
   }

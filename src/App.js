@@ -371,9 +371,9 @@ class App extends Component {
                 deleteDescription={this.deleteDescription}
               ></PracticalExperience>
 
-              <ClearButton clear={this.clear}></ClearButton>
-
               <ExampleResume showExample={this.exampleResume}></ExampleResume>
+
+              <ClearButton clear={this.clear}></ClearButton>
             </div>
 
             <div id="preview-screen" className="container-col">

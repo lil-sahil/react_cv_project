@@ -17,7 +17,7 @@ ul {
   --preview-sidebar-background-color: #e9ecf0;
   --font-size-preview-main: 14px;
   --font-size-preview-sidebar: 14px;
-  --delete-button-color: #d11406;
+  --delete-button-color: #FFCC00;
   --delete-button-color-hover: #c91002;
   --add-buttton-color: #5cbd02;
 }
@@ -170,7 +170,7 @@ textarea {
   width: 2rem;
   height: 2rem;
   border: none;
-  color: var(--delete-button-color);
+  color: var(--delete-button-color-hover);
   cursor: pointer;
 }
 
@@ -214,18 +214,36 @@ div > .description-style {
 }
 
 .reset-btn {
-  margin-top: 1rem;
+  margin-top: 5rem;
   width: 100%;
-  background-color: rgb(211, 218, 14);
+  background-color: #c91002;
   border-radius: 5px;
   height: 2rem;
-  color: #fff;
   font-size: 1.2rem;
   cursor: pointer;
+  color: white;
 }
 
 .reset-btn:hover {
   font-size: 1.5rem;
+}
+
+
+#example-resume-btn > button{
+  width: 100%;
+  background-color: black;
+  border-radius: 5px;
+  height: 2rem;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+
+#example-resume-btn > button:hover{
+  background-color: white;
+  color: black;
+  cursor: pointer;
 }
 
 /* Preview Screen */

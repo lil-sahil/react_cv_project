@@ -8,7 +8,7 @@ export class ExampleResume extends Component {
   render() {
     return (
       <div id="example-resume-btn">
-        <button onClick={this.props.showExample}> Sample Resume</button>
+        <button onClick={this.props.showExample}>Load Sample Resume</button>
       </div>
     );
   }
