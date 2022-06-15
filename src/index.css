@@ -73,7 +73,6 @@ body {
 }
 
 .background{
-  width: 100vw;
   background-color: #c6c8cc;
   padding-top: 2rem;
 }
@@ -83,13 +82,13 @@ body {
 /* INFORMATION ENTER SCREEN */
 
 #information-enter-screen {
-  border: var(--primary-color) 2px solid;
-  border-radius: 5px;
+  /* border: var(--primary-color) 2px solid; */
+  /* border-radius: 5px; */
   background-color: var(--preview-sidebar-background-color);
-  box-shadow: 2px 2px var(--secondary-color);
+  /* box-shadow: 2px 2px var(--secondary-color); */
   width: 100%;
   padding: 1rem;
-  margin-right: 4rem;
+  margin-right: 1rem;
 }
 
 ::placeholder {
@@ -272,6 +271,7 @@ div > .description-style {
 #preview-screen {
   position: sticky;
   top: 0;
+  border: 2px solid var(--primary-color);
 }
 
 /* Preview Container */
@@ -358,6 +358,7 @@ div > .description-style {
   background-color: var(--primary-color);
   color: #fff;
   margin: 0 0.5rem 0.5rem 0;
+  font-family: var(--main-font);
 }
 
 
