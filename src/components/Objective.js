@@ -11,6 +11,7 @@ class Objective extends Component {
         <textarea
           onChange={this.props.checkChange}
           placeholder="Objective"
+          value={this.props.currentState.objectiveInformation}
         ></textarea>
       </div>
     );

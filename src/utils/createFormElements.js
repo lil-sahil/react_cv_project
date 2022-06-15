@@ -17,7 +17,7 @@ export let createFormElements = (
     "projectInformation",
   ];
   let descriptionAddButton = ["workInformation", "projectInformation"];
-  return currentState[informationType].map((x) => {
+  return currentState[informationType].map((x, ind) => {
     let arr = [];
     let element;
     for (let y in x) {
@@ -30,6 +30,7 @@ export let createFormElements = (
                   className={y}
                   onChange={changeMethod}
                   placeholder="Enter a description"
+                  value={currentState[informationType][ind][y]}
                 ></textarea>
 
                 <button onClick={deleteDescription} className={y}>
@@ -42,6 +43,7 @@ export let createFormElements = (
                 className={y}
                 onChange={changeMethod}
                 placeholder={convertCamelToRegular(y)}
+                value={currentState[informationType][ind][y]}
               ></input>
             )}
           </div>

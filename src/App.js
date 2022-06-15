@@ -83,12 +83,9 @@ class App extends Component {
   // Check for change of Objective Field
 
   objectiveChangeField(e) {
-    this.setState(
-      {
-        objectiveInformation: e.target.value,
-      },
-      () => console.log(this.state)
-    );
+    this.setState({
+      objectiveInformation: e.target.value,
+    });
   }
 
   // Check for change of fields
@@ -326,7 +323,10 @@ class App extends Component {
           <div className="container-row main-container">
             <div id="information-enter-screen">
               <h1 className="enter-information-heading">Objective</h1>
-              <Objective checkChange={this.objectiveChangeField}></Objective>
+              <Objective
+                checkChange={this.objectiveChangeField}
+                currentState={this.state}
+              ></Objective>
 
               <h1 className="enter-information-heading">General Information</h1>
               <GeneralInformation
