@@ -94,13 +94,11 @@ class App extends Component {
 
   // Check for change of fields
   changeField(e) {
-    let informationBucket = e.target.parentNode.parentNode.className;
-    let elementId = parseInt(
-      e.target.parentNode.parentNode.parentNode.className
-    );
+    let informationBucket = e.target.parentNode.classList[0];
+    let elementId = parseInt(e.target.parentNode.parentNode.className);
     let informationType = e.target.className;
 
-    console.log(informationBucket);
+    console.log(elementId);
 
     this.setState((prevState) => {
       let filteredItem = prevState[`${informationBucket}`].filter(

@@ -23,9 +23,9 @@ export let createFormElements = (
     for (let y in x) {
       if (y !== "id") {
         element = (
-          <div className={informationType}>
+          <div className={`${informationType} description-style`}>
             {y.includes("description") ? (
-              <div className="description-style">
+              <>
                 <textarea
                   className={y}
                   onChange={changeMethod}
@@ -36,7 +36,7 @@ export let createFormElements = (
                 <button onClick={deleteDescription} className={y}>
                   <ImCross />
                 </button>
-              </div>
+              </>
             ) : (
               <input
                 type="input"
