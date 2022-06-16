@@ -265,6 +265,23 @@ div > .description-style {
   cursor: pointer;
 }
 
+/* Save to PDF Button */
+#save-to-pdf > button {
+  width: 100%;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  height: 2rem;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+#save-to-pdf > button:hover{
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+}
+
 
 /* PREVIEW SCREEN */
 
@@ -276,11 +293,12 @@ div > .description-style {
 
 /* Preview Container */
 #preview-container {
-  padding: 0.25rem;
+  padding: 0 0.7rem;
   height: 11in; 
   font-family: var(--main-font);
   color: var(--secondary-color);
   width: 8.5in;
+  overflow: hidden;
 
 }
 
