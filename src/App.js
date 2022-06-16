@@ -9,10 +9,13 @@ import Skills from "./components/Skills";
 import Objective from "./components/Objective";
 import { Example } from "./components/example";
 import ExampleResume from "./components/ExampleResume";
+import { generatePDF } from "./utils/pdfPrint";
+import SavePdf from "./components/SavePdf";
 
 class App extends Component {
   constructor() {
     super();
+    // generatePDF();
 
     this.state = {
       // General Information
@@ -78,6 +81,7 @@ class App extends Component {
     this.deleteSkill = this.deleteSkill.bind(this);
     this.objectiveChangeField = this.objectiveChangeField.bind(this);
     this.exampleResume = this.exampleResume.bind(this);
+    this.saveToPdf = this.saveToPdf.bind(this);
   }
 
   // Check for change of Objective Field
@@ -310,6 +314,11 @@ class App extends Component {
     this.setState(Example());
   }
 
+  // Safe as pdf
+  saveToPdf() {
+    generatePDF();
+  }
+
   render() {
     return (
       <>
@@ -372,6 +381,8 @@ class App extends Component {
               ></PracticalExperience>
 
               <ExampleResume showExample={this.exampleResume}></ExampleResume>
+
+              <SavePdf savePdf={this.saveToPdf}></SavePdf>
 
               <ClearButton clear={this.clear}></ClearButton>
             </div>
