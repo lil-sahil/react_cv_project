@@ -465,3 +465,7 @@ div > .description-style {
   width: 100%;
   text-align: justify;
 }
+
+.preview-date {
+  height: 2rem;
+}
