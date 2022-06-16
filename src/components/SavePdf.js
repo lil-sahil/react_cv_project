@@ -8,7 +8,7 @@ export class SavePdf extends Component {
   render() {
     return (
       <div id="save-to-pdf">
-        <button onClick={this.props.savepdf}>Export to PDF</button>
+        <button onClick={this.props.savePdf}>Export to PDF</button>
       </div>
     );
   }

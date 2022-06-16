@@ -316,6 +316,7 @@ class App extends Component {
 
   // Safe as pdf
   saveToPdf() {
+    console.log("clickeeeed");
     generatePDF();
   }
 
