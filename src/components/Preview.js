@@ -19,7 +19,7 @@ class Preview extends Component {
             <div className="prof-designation">
               {
                 this.props.currentState.generalInformation[0]
-                  .proffessionalDesignation
+                  .professionalDesignation
               }
             </div>
             <div className="phone">
