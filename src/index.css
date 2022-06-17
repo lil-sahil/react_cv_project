@@ -469,3 +469,35 @@ div > .description-style {
 .preview-date {
   height: 2rem;
 }
+
+
+
+
+
+/* Media Queries */
+
+@media all and (max-width:1500px){
+
+  .main-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #main-title {
+    text-align: center;
+  }
+
+  #preview-screen {
+    margin-left: 1.5rem;
+  }
+
+  #information-enter-screen {
+    margin-right: 0;
+  }
+
+  .hide {
+    display: none;
+  }
+
+}

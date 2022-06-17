@@ -11,6 +11,7 @@ import { Example } from "./components/example";
 import ExampleResume from "./components/ExampleResume";
 import { generatePDF } from "./utils/pdfPrint";
 import SavePdf from "./components/SavePdf";
+import ShowPreview from "./components/ShowPreview";
 
 class App extends Component {
   constructor() {
@@ -385,7 +386,9 @@ class App extends Component {
               <ClearButton clear={this.clear}></ClearButton>
             </div>
 
-            <div id="preview-screen" className="container-col">
+            {window.innerWidth <= 1500 ? <ShowPreview></ShowPreview> : 0}
+
+            <div id="preview-screen" className="container-col hide">
               <Preview currentState={this.state}></Preview>
             </div>
           </div>
