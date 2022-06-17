@@ -386,7 +386,9 @@ class App extends Component {
               <ClearButton clear={this.clear}></ClearButton>
             </div>
 
-            {window.innerWidth <= 1500 ? <ShowPreview></ShowPreview> : 0}
+            <ShowPreview></ShowPreview>
+
+            {/* {window.innerWidth <= 1500 ? <ShowPreview></ShowPreview> : <></>} */}
 
             <div id="preview-screen" className="container-col hide">
               <Preview currentState={this.state}></Preview>

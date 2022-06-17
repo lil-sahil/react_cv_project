@@ -478,22 +478,34 @@ div > .description-style {
 
 @media all and (max-width:1500px){
 
+  /* Controls the min width of the body to accomodate scrolling when the preview screen is being viewed on smaller screens */
+  .width-control {
+    min-width: 8.5in;
+  }
+
   .main-container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
+
+
 
   #main-title {
     text-align: center;
+    padding: 0.2rem 1rem;
   }
 
   #preview-screen {
     margin-left: 1.5rem;
+    overflow:visible;
   }
 
   #information-enter-screen {
     margin-right: 0;
+    max-width: 100vw;
+    overflow: hidden;
   }
 
   .hide {
