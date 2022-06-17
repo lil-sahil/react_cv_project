@@ -388,8 +388,6 @@ class App extends Component {
 
             <ShowPreview></ShowPreview>
 
-            {/* {window.innerWidth <= 1500 ? <ShowPreview></ShowPreview> : <></>} */}
-
             <div id="preview-screen" className="container-col hide">
               <Preview currentState={this.state}></Preview>
             </div>

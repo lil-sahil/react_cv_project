@@ -471,6 +471,23 @@ div > .description-style {
 }
 
 
+/* Show Preview button */
+#show-preview-btn > button {
+  width:fit-content;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  height: 2rem;
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  padding: 0.25rem 1rem;
+}
+
+#show-preview-btn > button:active {
+  cursor: pointer;
+  background-color: var(--secondary-color);
+
+}
 
 
 
@@ -488,6 +505,10 @@ div > .description-style {
     justify-content: center;
     align-items: center;
     width: 100%;
+  }
+
+  .background {
+    padding-top: 0;
   }
 
 
@@ -510,6 +531,12 @@ div > .description-style {
 
   .hide {
     display: none;
+  }
+
+  #show-preview-btn {
+    background-color: var(--preview-sidebar-background-color);
+    width: 100%;
+    text-align: center;
   }
 
 }
