@@ -243,7 +243,6 @@ class App extends Component {
   addDescription(e) {
     let itemId = parseInt(e.currentTarget.parentNode.classList[0]);
     let bucket = e.currentTarget.classList[0];
-
     this.setState({
       [bucket]: this.state[bucket].map((x) => {
         if (x.id === itemId) {
@@ -256,6 +255,7 @@ class App extends Component {
               descriptionCount += 1;
             }
           });
+
           // add another description
           x[`description_${descriptionCount}`] = "";
         }
@@ -266,18 +266,29 @@ class App extends Component {
 
   // Delete description
   deleteDescription(e) {
-    let bucket = e.currentTarget.parentNode.parentNode.className;
-    let itemId = parseInt(
-      e.currentTarget.parentNode.parentNode.parentNode.className
-    );
+    let bucket = e.currentTarget.parentNode.classList[0];
+    let itemId = parseInt(e.currentTarget.parentNode.parentNode.className);
     let descriptionId = e.currentTarget.className;
-
     this.setState({
       [bucket]: this.state[bucket].map((x) => {
         if (x.id === itemId) {
           x = Object.fromEntries(
             Object.entries(x).filter(([key]) => key !== descriptionId)
           );
+
+          // Get numeber of descriptions remaining and rename the descriptions
+          let count = 0;
+
+          x = Object.fromEntries(
+            Object.entries(x).map(([k, v]) => {
+              if (k.includes("description_")) {
+                count += 1;
+                return [`description_${count}`, v];
+              }
+              return [k, v];
+            })
+          );
+          console.log(x);
         }
         return x;
       }),
