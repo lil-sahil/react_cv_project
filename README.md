@@ -3,11 +3,8 @@
 <!-- PROJECT TITLE -->
 <br />
 <div align="center">
-  <a href="https://github.com/lil-sahil/react_cv_project">
-    Perfect Resume
-  </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Perfect Resume</h3>
 
   <p align="center">
     Easily Build The Perfect Resume!
@@ -67,7 +64,7 @@ The application has also been optimized to work on mobile devices.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Visit the following link to use the application - free of charge. Also rest assured, no user information is stored.
+Visit the below link to use the application - free of charge. Also rest assured, no user information is stored.
     <br>
     <a href="https://lil-sahil.github.io/react_cv_project/">View Demo</a>
 
@@ -80,10 +77,12 @@ Visit the following link to use the application - free of charge. Also rest assu
 ## Usage
 
 - Enter the information in the input fields. The information will be shown in a live preview on the resume template.
-    <img src="images/perfect_resume_showcase.png" alt="Logo" width="80" height="80">
+    <br>
+    <img src="images/perfect_resume_showcase.png" alt="Img" width="400" height="600">
 
 - Scroll down to the bottom of the page where by clicking the appropriate buttons, a sample resume can be filled, along with exporting the finished resume as a pdf for emailing or printing purposes.
-    <img src="images/perfect_resume_showcase_2.png" alt="Logo" width="80" height="80">
+    <br>
+    <img src="images/perfect_resume_showcase_2.png" alt="Img" width="400" height="600">
 
 
 
