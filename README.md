@@ -78,11 +78,11 @@ Visit the below link to use the application - free of charge. Also rest assured,
 
 - Enter the information in the input fields. The information will be shown in a live preview on the resume template.
     <br>
-    <img src="images/perfect_resume_showcase.png" alt="Img" width="400" height="600">
+    <img src="images/perfect_resume_showcase.png" alt="Img" width="400" object-fit="cover">
 
 - Scroll down to the bottom of the page where by clicking the appropriate buttons, a sample resume can be filled, along with exporting the finished resume as a pdf for emailing or printing purposes.
     <br>
-    <img src="images/perfect_resume_showcase_2.png" alt="Img" width="400" height="600">
+    <img src="images/perfect_resume_showcase_2.png" alt="Img" width="400" object-fit="cover">
 
 
 
