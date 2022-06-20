@@ -3,9 +3,9 @@ export let Example = () => {
     // General Information
     generalInformation: [
       {
-        name: "Sahil Nagpal",
-        email: "sahil.nagpal@magna.com",
-        phoneNumber: "437-770-1010",
+        name: "John Doe",
+        email: "John.Doe@email.com",
+        phoneNumber: "999-999-9999",
         gitHub: "lil-sahil",
         professionalDesignation: "Data Scientist / FS Web Developer",
         id: 1,
@@ -13,27 +13,27 @@ export let Example = () => {
     ],
 
     objectiveInformation:
-      "Excellent communicator, and problem solver, looking to join a company, who may utilize an individual with strong knowledge in statistical analysis and machine learning principles.",
+      "Lorem ipsum dolor sit amet. Et aliquam quia nam harum aspernatur ut laboriosam nisi ea cupiditate quia ea eveniet.",
 
     educationInformation: [
       {
         degree: "M.Eng",
-        degreeDescription: "Mechanical Engineering",
-        schoolName: "University of Toronto",
+        degreeDescription: "Lorem Engineering",
+        schoolName: "University of Lorem",
         startDate: "2020",
         endDate: "2022",
-        city: "Toronto",
+        city: "Lorem",
         stateProvince: "ON",
         country: "Canada",
         id: 1,
       },
       {
         degree: "BASc",
-        degreeDescription: "Mechanical Engineering",
-        schoolName: "University of Toronto",
+        degreeDescription: "Lorem Engineering",
+        schoolName: "University of Lorem",
         startDate: "2012",
         endDate: "2017",
-        city: "Toronto",
+        city: "Lorem",
         stateProvince: "ON",
         country: "Canada",
         id: 2,
@@ -53,72 +53,65 @@ export let Example = () => {
 
     workInformation: [
       {
-        jobTitle: "Engineer - AI/ML Lead",
+        jobTitle: "Lorem Lorem Lorem",
         startDate: "2019",
         endDate: "Present",
-        companyName: "Magna International",
+        companyName: "Lorem Industries",
         description_1:
-          "Pioneered the use of applying traditional statistical, and machine learning techniques, to optimize operations for a large auto-parts manufacturing plant",
+          "Lorem ipsum dolor sit amet. Non mollitia nesciunt et ratione sint et voluptatem placeat eum aspernatur porro nam nesciunt dolor et incidunt velit.",
         description_2:
-          "Designed and developed custom analysis systems to extract useful information from large scale data.",
+          "Lorem ipsum dolor sit amet. Non mollitia nesciunt et ratione sint et voluptatem placeat eum aspernatur porro nam nesciunt dolor et incidunt velit.",
         description_3:
-          "Presented results and findings to cross functional team consisting of managers and executives.",
+          "Lorem ipsum dolor sit amet. Non mollitia nesciunt et ratione sint et voluptatem placeat eum aspernatur porro nam nesciunt dolor et incidunt velit.",
         id: 1,
       },
       {
-        jobTitle: "Manufacturing Engineer",
+        jobTitle: "Lorem Lorem Lorem",
         startDate: "2017",
         endDate: "2019",
-        companyName: "Magna International",
+        companyName: "Lorem Industries",
         description_1:
-          "Performed key steps in implementing and flawlessly launching a $10+ million dollar chassis (rear sub-frame) MIG welding line.",
+          "Lorem ipsum dolor sit amet. Non mollitia nesciunt et ratione sint et voluptatem placeat eum aspernatur porro nam nesciunt dolor et incidunt velit.",
         description_2:
-          "Generated a net yearly savings of $1.2 million dollars, through engineering process improvements, and creative ingenuity",
+          "Lorem ipsum dolor sit amet. Non mollitia nesciunt et ratione sint et voluptatem placeat eum aspernatur porro nam nesciunt dolor et incidunt velit.",
         description_3:
-          "Assisted the production department in identifying the root cause of issues impacting OEE metrics.",
+          "Lorem ipsum dolor sit amet. Non mollitia nesciunt et ratione sint et voluptatem placeat eum aspernatur porro nam nesciunt dolor et incidunt velit.",
         id: 2,
       },
     ],
 
     projectInformation: [
       {
-        projectTitle: "Predictive Maintenance",
+        projectTitle: "Lorem Lorem Lorem",
         startDate: "2021",
         endDate: "",
-        companyName: "Magna International",
+        companyName: "Lorem Industries",
         description_1:
-          "Interfaced with SQL server and wrote complex queries to consolidate data stored in various tables.",
+          "Lorem ipsum dolor sit amet. Non mollitia nesciunt et ratione sint et voluptatem placeat eum aspernatur porro nam nesciunt dolor et incidunt velit.",
         description_2:
-          "Applied parametric statistical models and conditional probability to model the remaining useful life and probability of failure of critical components.",
-        description_3:
-          "Developed a dashboard using PowerBI, to allow maintenance department to see in real time which components are nearing the end of their life cycle, and replace the components before critical failure occurs.",
-        description_4: "Project realized annual savings of $128,000.",
+          "Lorem ipsum dolor sit amet. Non mollitia nesciunt et ratione sint et voluptatem placeat eum aspernatur porro nam nesciunt dolor et incidunt velit.",
         id: 1,
       },
       {
-        projectTitle: "Downtime Data Analytics",
+        projectTitle: "Lorem Lorem Lorem",
         startDate: "2020",
         endDate: "",
-        companyName: "Magna International",
+        companyName: "Lorem Industries",
         description_1:
-          "Utilized NLP techniques, and unsupervised machine learning algorithms, to extract key topics from operator entered downtime data.",
+          "Lorem ipsum dolor sit amet. Non mollitia nesciunt et ratione sint et voluptatem placeat eum aspernatur porro nam nesciunt dolor et incidunt velit.",
         description_2:
-          "Created a fully interactive PowerBI Dashboard to allow Engineers and Production Managers to easily determine their downtime issues.",
-        description_3:
-          "Dashboard is currently being used plant wide, and has become an integral part of both daily reporting and analysis.",
+          "Lorem ipsum dolor sit amet. Non mollitia nesciunt et ratione sint et voluptatem placeat eum aspernatur porro nam nesciunt dolor et incidunt velit.",
         id: 2,
       },
       {
-        projectTitle: "Autonomous Robot",
+        projectTitle: "Lorem Lorem Lorem",
         startDate: "2017",
         endDate: "",
-        companyName: "University of Toronto",
+        companyName: "University of Lorem",
         description_1:
-          "Programmed an autonomous robot to participate in various challenges involving mapping and localization, object identification via computer vision (OpenCV), and robot-human interaction.",
+          "Lorem ipsum dolor sit amet. Non mollitia nesciunt et ratione sint et voluptatem placeat eum aspernatur porro nam nesciunt dolor et incidunt velit.",
         description_2:
-          "Utilized C++ for code development, Robot Operating System (ROS) for code deployment and Gazebo simulator for virtual code testing.",
-        description_3:
-          "Designed and selected appropriate sensors and servo drives to gain a competitive edge in the challenges.",
+          "Lorem ipsum dolor sit amet. Non mollitia nesciunt et ratione sint et voluptatem placeat eum aspernatur porro nam nesciunt dolor et incidunt velit.",
         id: 3,
       },
     ],
